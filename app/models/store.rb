@@ -1,10 +1,12 @@
 class Store < ApplicationRecord
-  belongs_to :store_owner, class_name: 'User'
-  has_one :store_wallet
+  belongs_to :user
+  has_one :wallet
   has_many :transactions
-
-  enum role: [:regular_user, :store_owner]
 
   validates :name, presence: true
   validates :location, presence: true
+
+  def store_owner?
+    user.present?
+  end
 end

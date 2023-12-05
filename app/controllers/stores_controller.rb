@@ -11,11 +11,11 @@ class StoresController < ApplicationController
   end
 
   def new
-    @store = current_user.build_store
+    @store = current_user.stores.build
   end
 
   def create
-    @store = current_user.build_store(store_params)
+    @store = current_user.stores.build(store_params)
     if @store.save
       redirect_to @store, notice: 'Store was successfully created.'
     else
@@ -50,8 +50,8 @@ class StoresController < ApplicationController
   end
 
   def authorize_store_owner
-    unless current_user == @store.store_owner
-      redirect_to root_path, alert: 'You are not authorized to perform this action.'
+    unless current_user == @store.user
+      redirect_to root_path
     end
   end
 end
