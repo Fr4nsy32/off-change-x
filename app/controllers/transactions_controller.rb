@@ -6,10 +6,11 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
-    @transaction.sender_id = Wallet.where(user_id: @current_user)
-    @transaction.receiver_id = params(:transaction['receiver_id'])
-    # @transaction.receiver_id = Wallet.find(params[:receiver_id])
+    # @wallet = Wallet.where(user_id: @current_user)
+    @transaction.sender = Wallet.find_by(user_id: current_user)
     raise
+    # @transaction.receiver_id = params(:receiver_id)
+    # @transaction.receiver_id = Wallet.find(params[:receiver_id])
     @transaction.save
     # @receiver_wallets = Wallet.where.not(user_id: @current_user.id)
   end
@@ -17,6 +18,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:amount, :sender_id, :receiver_id)
+    params.require(:transaction).permit(:amount)
   end
 end
