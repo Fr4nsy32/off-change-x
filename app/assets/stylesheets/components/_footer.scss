@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, #212492,  #622aa3);
+  width: 100%;
+  padding: 4px 0;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-links {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0 36px;
+    margin: 0;
+  }
+
+  li {
+    margin: 10px 0px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  i.fa-solid {
+    font-size: 48px;
+    color: goldenrod;
+  }
+}
