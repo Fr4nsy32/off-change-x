@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_store, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -9,11 +10,11 @@ class StoresController < ApplicationController
   end
 
   def new
-    @store = Store.new
+    @store = current_user.build_store
   end
 
   def create
-    @store = Store.new(store_params)
+    @store = current_user.build_store(store_params)
     if @store.save
       redirect_to @store, notice: 'Store was successfully created.'
     else
@@ -44,6 +45,6 @@ class StoresController < ApplicationController
   end
 
   def store_params
-    params.require(:store).permit(:name, :location, ...other_attributes...)
+    params.require(:store).permit(:name, :location)
   end
 end
