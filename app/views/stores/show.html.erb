@@ -1,0 +1,9 @@
+<h1><%= @store.name %></h1>
+<p>Location: <%= @store.location %></p>
+
+<% if current_user.store_owner? %>
+  <%= link_to 'Edit', edit_store_path(@store) %> |
+  <%= link_to 'Destroy', @store, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<%= link_to 'Back', stores_path %>
