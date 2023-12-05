@@ -1,17 +1,23 @@
-<h1>Currency Exchange</h1>
+<div id="amount-section">
+  <h1>Currency Exchange</h1>
 
-<%= form_tag(exchange_path, method: :post) do %>
-  <label for="amount">Amount:</label>
-  <%= text_field_tag :amount, nil, required: true %>
+  <%= form_tag(exchange_path, method: :post) do %>
+    <div class="form-fields">
+      <label for="amount">Amount:</label>
+      <%= text_field_tag :amount, nil, required: true %>
 
-  <label for="source_currency">Source Currency:</label>
-  <%= select_tag :source_currency, options_for_select(['USD', 'EUR', 'GBP']), required: true %>
+      <label for="source_currency">Source Currency:</label>
+      <%= select_tag :source_currency, options_for_select(['USD', 'EUR', 'GBP']), required: true %>
 
-  <label for="target_currency">Target Currency:</label>
-  <%= select_tag :target_currency, options_for_select(['USD', 'EUR', 'GBP']), required: true %>
+      <label for="target_currency">Target Currency:</label>
+      <%= select_tag :target_currency, options_for_select(['USD', 'EUR', 'GBP']), required: true %>
 
-  <%= submit_tag 'Checkout' %>
-<% end %>
+      <div class="button-container">
+        <%= submit_tag 'Checkout', id: 'convert-button' %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <div id="currency-pairs">
   <!--currency pairs and values here-->
