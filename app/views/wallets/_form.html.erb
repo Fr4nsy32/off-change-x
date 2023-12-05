@@ -1,0 +1,8 @@
+<div class="wallets-form">
+  <%= simple_form_for [@user, @wallet] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :currency %>
+    <%= f.input :main %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
