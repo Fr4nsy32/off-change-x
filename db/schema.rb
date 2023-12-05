@@ -17,8 +17,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_162024) do
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.time "opening_time"
-    t.time "closing_time"
+    t.string "opening_time"
+    t.string "closing_time"
     t.float "max_cash"
     t.string "unique_code"
     t.datetime "created_at", null: false
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_162024) do
     t.string "last_name"
     t.date "birth_date"
     t.string "country"
-    t.string "type"
+    t.string "category"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -56,9 +56,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_162024) do
   create_table "wallets", force: :cascade do |t|
     t.string "name"
     t.string "currency"
-    t.float "balance"
+    t.float "balance", default: 0.0
     t.bigint "user_id", null: false
-    t.boolean "main", default: true
+    t.boolean "main", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_wallets_on_user_id"
