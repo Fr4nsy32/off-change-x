@@ -1,0 +1,18 @@
+<h1>Currency Exchange</h1>
+
+<%= form_tag(exchange_path, method: :post) do %>
+  <label for="amount">Amount:</label>
+  <%= text_field_tag :amount, nil, required: true %>
+
+  <label for="source_currency">Source Currency:</label>
+  <%= select_tag :source_currency, options_for_select(['USD', 'EUR', 'GBP']), required: true %>
+
+  <label for="target_currency">Target Currency:</label>
+  <%= select_tag :target_currency, options_for_select(['USD', 'EUR', 'GBP']), required: true %>
+
+  <%= submit_tag 'Checkout' %>
+<% end %>
+
+<div id="currency-pairs">
+  <!--currency pairs and values here-->
+</div>
