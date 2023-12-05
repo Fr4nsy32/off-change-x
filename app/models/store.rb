@@ -4,9 +4,5 @@ class Store < ApplicationRecord
   has_many :transactions
 
   validates :name, presence: true
-  validates :location, presence: true
-
-  def store_owner?
-    user.present?
-  end
+  validates :address, presence: true
 end
