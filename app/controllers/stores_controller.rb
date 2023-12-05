@@ -1,6 +1,7 @@
 class StoresController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_store, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_store_owner, only: [:edit, :update, :destroy]
 
   def index
     @stores = Store.all
@@ -46,5 +47,11 @@ class StoresController < ApplicationController
 
   def store_params
     params.require(:store).permit(:name, :location)
+  end
+
+  def authorize_store_owner
+    unless current_user == @store.store_owner
+      redirect_to root_path, alert: 'You are not authorized to perform this action.'
+    end
   end
 end
