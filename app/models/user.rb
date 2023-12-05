@@ -12,4 +12,5 @@ class User < ApplicationRecord
   validates :category, presence: true, inclusion: {in: %w(user store)}
   has_many :wallets, dependent: :destroy
   has_many :transactions, through: :wallets
+  has_many :stores
 end
