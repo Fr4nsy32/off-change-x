@@ -1,24 +1,27 @@
-
 document.addEventListener('DOMContentLoaded', function () {
-  // simulation data (to replace this with real data from API later)
+  // Simulated data (replace this with real data from your API later)
   const currencyPairs = ['EUR/USD', 'EUR/GBP', 'EUR/CHF'];
   const currencyValues = [1.12, 0.85, 1.07];
 
-  // function to update the currency pairs and values on the page
+  // Function to update the currency pairs and values on the page
   function updateCurrencyPairs() {
     const currencyPairsDiv = document.getElementById('currency-pairs');
 
-    // clear existing content
+    // Clear existing content
     currencyPairsDiv.innerHTML = '';
 
-    // create and append new content
+    // Create and append new content as an unordered list
+    const list = document.createElement('ul');
     for (let i = 0; i < currencyPairs.length; i++) {
-      const pairDiv = document.createElement('div');
-      pairDiv.innerHTML = `<span>${currencyPairs[i]}:</span> ${currencyValues[i]}`;
-      currencyPairsDiv.appendChild(pairDiv);
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `<span>${currencyPairs[i]}:</span> ${currencyValues[i]}`;
+      list.appendChild(listItem);
     }
+
+    // Append the list to the container
+    currencyPairsDiv.appendChild(list);
   }
 
-  // initial update
+  // Initial update
   updateCurrencyPairs();
 });
