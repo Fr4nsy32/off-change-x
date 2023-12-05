@@ -15,6 +15,33 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "first_name" }%>
+    <%= f.input :username,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "username" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :birth_date,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "birth_date" }%>
+    <%# <%= f.input :country,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "country" }%>
+    <%= f.input :category,
+                collection: ['user', 'store'],
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "category" },
+                as: :radio_buttons,
+                hint: 'If you want to list a store select store'%>
   </div>
 
   <div class="form-actions">
