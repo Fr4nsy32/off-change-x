@@ -15,14 +15,6 @@ class TransactionsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    # params[:transaction][:receiver]
-    # @transaction.receiver = @wallets.first
-    # @store = Store.find(params[:store_id])
-    # @wallets = @store.user.wallets.where(main: true)
-    # @transaction.receiver = @wallets
-    # @transaction.receiver_id = params(:receiver_id)
-    # @transaction.receiver_id = Wallet.find(params[:receiver_id])
-    # @receiver_wallets = Wallet.where.not(user_id: @current_user.id)
   end
 
   def edit
