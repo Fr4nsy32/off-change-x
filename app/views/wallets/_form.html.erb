@@ -1,7 +1,7 @@
 <div class="wallets-form">
   <%= simple_form_for [@user, @wallet] do |f| %>
     <%= f.input :name %>
-    <%= f.input :currency %>
+    <%= f.input :currency, collection: ["EUR", "USD", "GPB"] %>
     <%= f.input :main %>
     <%= f.button :submit %>
   <% end %>

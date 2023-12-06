@@ -57,4 +57,9 @@ class WalletsController < ApplicationController
   def set_wallet
     @wallet = current_user.wallets.find(params[:id])
   end
+
+  def set_main
+    @wallet.update(main: true)
+    redirect_to wallet_path(@wallet), notice: 'Wallet set as main.'
+  end
 end

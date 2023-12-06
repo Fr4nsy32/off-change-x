@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birth_date, presence: true
+  validates :email, uniqueness: true
   # validates :country, presence: true
   validates :category, presence: true, inclusion: {in: %w(user store)}
   has_many :wallets, dependent: :destroy

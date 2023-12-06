@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
   resources :stores, only: [:index, :show, :new, :create, :edit, :update]
   resources :transactions, only: [:new, :create, :edit, :update]
-  resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    member do
+      patch 'set_main'
+    end
+  end
 end
