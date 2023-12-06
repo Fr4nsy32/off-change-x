@@ -1,24 +1,24 @@
-.wallet-square {
-  max-width: 300px;
-  margin: 0 auto;
-  border: 2px solid #333;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #f4f4f4;
-  margin-bottom: 20px;
-}
-
 .wallets-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-}
+  justify-content: space-around;
+  padding: 20px;
 
-.wallet-item {
-  width: 200px;
-  padding: 15px;
-  border: 1px solid #ddd; 
-  border-radius: 8px;
-  margin-bottom: 10px;
-  text-align: center;
+  .wallet-item {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
 }
