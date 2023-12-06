@@ -40,7 +40,8 @@ export default class extends Controller {
     console.log(this.markersValue)
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
-    // return crd;
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl }))
   }
 
   error(err) {
