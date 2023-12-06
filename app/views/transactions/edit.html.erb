@@ -3,9 +3,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :amount %>
-    <%= f.input :receiver %>
-    <%= f.input :sender,  collection: current_user.wallets %>
+    <%= f.input :status, collection: ["accepted", "rejected"] %>
    </div>
 
   <div class="form-actions">
