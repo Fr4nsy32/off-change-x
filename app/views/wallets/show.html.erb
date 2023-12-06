@@ -1,10 +1,15 @@
 <h1><%= @wallet.name %> Wallet details</h1>
 
-<div class="wallet-details">
-  <%= @wallet.balance %> <%= @wallet.currency %>
-</div>
 
-
-<%= link_to 'Load Amount in Exchange', exchange_path, class: 'btn btn-primary' %>
+<h2><%= @wallet.balance %> <%= @wallet.currency %></h2>
+<% @wallet.transactions_as_sender.each do |tran| %>
+  <p><%= tran.amount %></p>
+  <p><%= tran.created_at.strftime("%b %e, %l:%M %p") %></p>
+  <p><%= tran.receiver.user.stores[0].name %></p>
+  <p><%= tran.receiver.user.stores[0].address  %></p>
+<% end %>
+<%= link_to 'Top Up', exchange_path, class: 'btn btn-primary' %>
 
 <%= link_to 'Back', wallets_path, class: 'back-link' %>
+
+</div>
