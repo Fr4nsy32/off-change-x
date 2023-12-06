@@ -1,4 +1,4 @@
-import { Controller } from "@hotwired/stimulus"
+/* import { Controller } from "@hotwired/stimulus"
 
 const options = {
   enableHighAccuracy: true,
@@ -27,3 +27,4 @@ export default class extends Controller {
   navigator.geolocation.getCurrentPosition(this.success, this.error, options);
   }
 }
+ */

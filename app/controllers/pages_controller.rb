@@ -2,9 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :exchange]
 
   def home
-    @wallets = Wallet.where(user_id: current_user)
-
+@store=Store.near(current_user())
   end
+
   def exchange
     current_user
     @wallets = Wallet.where(user_id: current_user)
@@ -29,4 +29,5 @@ class PagesController < ApplicationController
     #   converted_amount: converted_amount
     # }
   end
+
 end
