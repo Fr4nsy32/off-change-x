@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_many :wallets, dependent: :destroy
   has_many :transactions, through: :wallets
   has_many :stores
+  has_one :main_wallet, -> { where(main: true) }, class_name: 'Wallet'
 end
