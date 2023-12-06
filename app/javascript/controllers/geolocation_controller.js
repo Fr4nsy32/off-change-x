@@ -23,7 +23,7 @@ export default class extends Controller {
   error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
-  search() {
+  connect() {
   navigator.geolocation.getCurrentPosition(this.success, this.error, options);
   }
 }
