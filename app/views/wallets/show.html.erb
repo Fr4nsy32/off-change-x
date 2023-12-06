@@ -1,1 +1,10 @@
-<h1>Wallet details</h1>
+<h1><%= @wallet.name %> Wallet details</h1>
+
+<div class="wallet-details">
+  <%= @wallet.balance %> <%= @wallet.currency %>
+</div>
+
+
+<%= link_to 'Load Amount in Exchange', exchange_path, class: 'btn btn-primary' %>
+
+<%= link_to 'Back', wallets_path, class: 'back-link' %>
