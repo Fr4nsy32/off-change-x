@@ -1,8 +1,7 @@
-<h1>Wallet details</h1>
 <div class="wallet-details">
 <h1><%= @wallet.name %> Wallet details</h1>
 
-  <%= @wallet.balance %> <%= @wallet.currency %>
+<h2><%= @wallet.balance %> <%= @wallet.currency %></h2>
 <% @wallet.transactions_as_sender.each do |tran| %>
   <p><%= tran.amount %></p>
   <p><%= tran.created_at.strftime("%b %e, %l:%M %p") %></p>
