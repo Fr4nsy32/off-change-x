@@ -4,6 +4,13 @@ class StoresController < ApplicationController
 
   def index
     @stores = Store.all
+    @markers = Store.geocoded.map do |store|
+      {
+        lat: store.latitude,
+        lng: store.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {store: store})
+      }
+    end
   end
 
   def show
@@ -45,7 +52,7 @@ class StoresController < ApplicationController
   end
 
   def store_params
-    params.require(:store).permit(:name, :location)
+    params.require(:store).permit(:name, :address)
   end
 
   def authorize_store_owner
