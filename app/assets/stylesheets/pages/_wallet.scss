@@ -1,0 +1,22 @@
+.wallet-square {
+  max-width: 300px;
+  margin: 0 auto;
+  border: 2px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  margin-bottom: 20px;
+}
+.wallets-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the gap as needed */
+}
+.wallet-item {
+  width: 200px; /* Adjust the width of each wallet card */
+  padding: 15px;
+  border: 1px solid #ddd; /* Add a border for separation */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+}

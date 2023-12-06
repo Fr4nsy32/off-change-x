@@ -1,7 +1,10 @@
 class WalletsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_wallet, only: [:show]
 
   def index
     @wallets = Wallet.all
+    @wallets = current_user.wallets
   end
 
   def show
@@ -49,5 +52,9 @@ class WalletsController < ApplicationController
 
   def wallet_params
     params.require(:wallet).permit(:name, :currency, :main)
+  end
+
+  def set_wallet
+    @wallet = current_user.wallets.find(params[:id])
   end
 end

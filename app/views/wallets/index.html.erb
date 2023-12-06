@@ -1,1 +1,13 @@
-<h1>All Wallets</h1>
+<h1>Your Wallets</h1>
+
+<div class="wallets-container">
+<% @wallets.each do |wallet| %>
+  <div class="wallet-item">
+      <%= wallet.name %></p>
+      <%= wallet[:currency] %></p>
+      <%= link_to 'View Details', wallet_path(wallet[:id]) %>
+    </div>
+ <% end %>
+</div>
+
+<%= link_to 'Back', root_path %>
