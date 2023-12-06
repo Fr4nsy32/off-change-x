@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_05_141044) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_104920) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_141044) do
     t.bigint "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["receiver_id"], name: "index_transactions_on_receiver_id"
     t.index ["sender_id"], name: "index_transactions_on_sender_id"
   end

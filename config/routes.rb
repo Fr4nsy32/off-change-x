@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get "exchange", to: "pages#exchange"
 
   resources :stores, only: [:index, :show, :new, :create, :edit, :update]
+  resources :transactions, only: [:new, :create, :edit, :update]
   resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :transactions, only: [:new, :create]
 end
