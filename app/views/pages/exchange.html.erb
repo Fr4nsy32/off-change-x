@@ -1,6 +1,6 @@
 <div id="amount-section">
   <h1>Currency Exchange</h1>
-  <div class="form-fields">
+  <div class="form-fields" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>" >
     <%= simple_form_for([@user, @transaction]) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -12,7 +12,12 @@
         <%= f.input :sender, collection: @wallets.map { |wallet| wallet.currency } %>
 
         <!-- Receiver Currency Dropdown -->
-        <%= f.input :receiver, collection: ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD'], prompt: "Select Receiver Currency" %>
+        <%= f.input :receiver, prompt: "Select Receiver Currency",
+            collection: [],
+            input_html: { data: { currency_target: "currency" } }%>
+        <%= f.input :rate, prompt: "Select Receiver Currency",
+            input_html: { data: { currency_target: "rates" } },
+            as: :hidden %>
       </div>
 
       <div class="form-actions">
@@ -20,7 +25,6 @@
       </div>
     <% end %>
   </div>
-
   <div id="currency-pairs">
     <!-- currency pairs and values here -->
   </div>

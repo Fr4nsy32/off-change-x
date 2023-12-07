@@ -5,6 +5,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
+    # raise
     current_user
     @transaction = Transaction.new(transaction_params)
     if params[:transaction][:receiver].length == 3
@@ -16,9 +17,9 @@ class TransactionsController < ApplicationController
       @transaction.accepted!
       @amount = params[:transaction][:amount].to_f
       @transaction.sender.balance -= 1
-      @transaction.sender.balance -= @amount * 1.12
+      @transaction.sender.balance -= @amount
       @transaction.sender.save
-      @transaction.receiver.balance += @amount * 1.12
+      @transaction.receiver.balance += @amount * params[:transaction][:rate].to_f
       @transaction.receiver.save
     else
       @transaction.sender = Wallet.find_by(user_id: current_user)
@@ -55,6 +56,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:amount, :status)
+    params.require(:transaction).permit(:amount, :status, :rate)
   end
 end
