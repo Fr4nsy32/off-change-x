@@ -31,10 +31,11 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "birth_date" }%>
-    <%# <%= f.input :country,
+    <%= f.input :country,
+                as: :country,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "country" }%>
+                input_html: { autocomplete: "country" } %>
     <%= f.input :category,
                 collection: ['user', 'store'],
                 required: true,

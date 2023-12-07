@@ -10,8 +10,12 @@ class TransactionsController < ApplicationController
       @transaction = Transaction.new(transaction_params)
       @transaction.sender = Wallet.find_by(currency: params[:transaction][:sender])
       @transaction.receiver = Wallet.find_by(currency: params[:transaction][:receiver])
+      if @transaction.receiver.nil?
+        @transaction.receiver = Wallet.create!(name: params[:transaction][:receiver], currency: params[:transaction][:receiver], balance: 0, user: current_user)
+      end
       @transaction.accepted!
       @amount = params[:transaction][:amount].to_f
+      @transaction.sender.balance -= 1
       @transaction.sender.balance -= @amount * 1.12
       @transaction.sender.save
       @transaction.receiver.balance += @amount * 1.12
