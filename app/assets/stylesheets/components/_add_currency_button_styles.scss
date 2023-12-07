@@ -1,0 +1,22 @@
+.add-currency-button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.add-currency-button {
+  background: linear-gradient(to bottom, #622aa3, #212492);
+  color: #fff;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+
+  i {
+    font-size: 16px;
+  }
+}
+
+  .currency-details {
+    margin-top: 10px;
+    margin-left: 20px;
+}
