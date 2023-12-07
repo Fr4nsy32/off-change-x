@@ -1,5 +1,6 @@
 <div class="wallet-details">
-<h1><%= @wallet.name %> Wallet details</h1>
+  <h1><%= @wallet.name %> Wallet details</h1>
+  <h2><%= @wallet.balance %> <%= @wallet.currency %></h2>
 
 <h2><%= @wallet.balance %> <%= @wallet.currency %></h2>
 <% @wallet.transactions_as_sender.each do |tran| %>

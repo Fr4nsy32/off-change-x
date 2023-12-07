@@ -1,22 +1,27 @@
 <div id="amount-section">
   <h1>Currency Exchange</h1>
   <div class="form-fields">
-  <%= simple_form_for([@user, @transaction]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for([@user, @transaction]) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :amount %>
-    <%= f.input :sender,  collection: @wallets.map { |wallet| wallet.currency } %>
-    <%= f.input :receiver, collection: ["EUR", "USD", "GPB"] %>
-   </div>
+      <div class="form-inputs">
+        <%= f.input :amount %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+        <!-- Sender Currency Dropdown -->
+        <%= f.input :sender, collection: @wallets.map { |wallet| wallet.currency } %>
+
+        <!-- Receiver Currency Dropdown -->
+        <%= f.input :receiver, collection: ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD'], prompt: "Select Receiver Currency" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
   </div>
-  </div>
-<% end %>
 
-<div id="currency-pairs">
-  <!--currency pairs and values here-->
+  <div id="currency-pairs">
+    <!-- currency pairs and values here -->
+  </div>
 </div>
