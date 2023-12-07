@@ -1,6 +1,63 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Offchangex - Currency Exchange</title>
+  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
 
-<button><%= link_to "Transaction", new_transaction_path %></button>
-<button><%= link_to "New wallet", new_wallet_path %></button>
-<button><%= link_to "Wallets", wallets_path %></button>
+<body>
+
+  <div class="banner">
+    <h1>Converter</h1>
+    <p>Last updated <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
+    <%= render partial: 'shared/dropdown' %>
+
+  </div>
+
+  <div class="currency-list">
+    <h2>Currency List</h2>
+
+    <div class="currency-rectangle">
+      <div class="flag-icon flag-icon-us"></div>
+      <div class="currency-details">
+        <div class="currency-code">USD</div>
+        <div class="currency-name">United States Dollar</div>
+      </div>
+      <div class="currency-value">
+        <div class="top-value">1 USD = 1 USD</div>
+        <div class="bottom-value">1 USD = 1 USD</div>
+      </div>
+    </div>
+
+    <div class="currency-rectangle">
+      <div class="flag-icon flag-icon-eu"></div>
+      <div class="currency-details">
+        <div class="currency-code">EUR</div>
+        <div class="currency-name">Euro</div>
+      </div>
+      <div class="currency-value">
+        <div class="top-value">1 EUR = 1.2 USD</div>
+        <div class="bottom-value">1 USD = 0.8333 EUR</div>
+      </div>
+    </div>
+
+    <div class="currency-rectangle">
+      <div class="flag-icon flag-icon-gb"></div>
+      <div class="currency-details">
+        <div class="currency-code">GBP</div>
+        <div class="currency-name">British Pound Sterling</div>
+      </div>
+      <div class="currency-value">
+        <div class="top-value">1 GBP = 1.5 USD</div>
+        <div class="bottom-value">1 USD = 0.6667 GBP</div>
+      </div>
+    </div>
+
+    <!-- Add more currencies as needed -->
+  </div>
+
+  <button><%= link_to "Transaction", new_transaction_path %></button>
+
+</body>
+
+</html>
