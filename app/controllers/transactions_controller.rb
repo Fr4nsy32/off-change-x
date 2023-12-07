@@ -5,23 +5,23 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    if exchange_path
-      current_user
-      @transaction = Transaction.new(transaction_params)
-      @transaction.sender = Wallet.find_by(currency: params[:transaction][:sender])
+    current_user
+    @transaction = Transaction.new(transaction_params)
+    @transaction.sender = Wallet.find_by(currency: params[:transaction][:sender])
+
+    if params[:action] == 'exchange'
       @transaction.receiver = Wallet.find_by(currency: params[:transaction][:receiver])
-      @transaction.accepted!
-      @amount = params[:transaction][:amount].to_f
-      @transaction.sender.balance -= @amount * 1.12
-      @transaction.sender.save
-      @transaction.receiver.balance += @amount * 1.12
-      @transaction.receiver.save
     else
-      @transaction = Transaction.new(transaction_params)
-      @transaction.sender = Wallet.find_by(user_id: current_user)
-      @store = Store.find_by(unique_code: params[:transaction][:receiver])
-      @transaction.receiver = @store.user.wallets.where(main: true).first
+      @transaction.receiver = Wallet.find_by(currency: params[:transaction][:receiver])
     end
+
+    @transaction.accepted!
+    @amount = params[:transaction][:amount].to_f
+    @transaction.sender.balance -= @amount * 1.12
+    @transaction.sender.save
+    @transaction.receiver.balance += @amount * 1.12
+    @transaction.receiver.save
+
     if @transaction.save
       redirect_to exchange_path, notice: "Transaction was successfully created."
     else
