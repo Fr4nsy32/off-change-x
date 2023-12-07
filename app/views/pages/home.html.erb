@@ -16,7 +16,8 @@
     <% end %>
 
     <div class="buttons">
-      <%= button_to "CHANGE AT THE STORE", new_transaction_path, method: :get, class: 'store-button' %>
+      <%= button_to "CHANGE AT THE STORE", stores_path, method: :get, class: 'store-button' %>
+      <a href="<%= exchange_path %>" class="exchange-currency-button">EXCHANGE CURRENCY</a>
     </div>
   </div>
 
