@@ -4,6 +4,7 @@ class StoresController < ApplicationController
 
   def index
     @stores = Store.all
+    @stores = policy_scope(Store)
     @markers = Store.geocoded.map do |store|
       {
         lat: store.latitude,
@@ -14,14 +15,17 @@ class StoresController < ApplicationController
   end
 
   def show
+    authorize @store
   end
 
   def new
     @store = current_user.stores.build
+    authorize @store
   end
 
   def create
     @store = current_user.stores.build(store_params)
+    authorize @store
     if @store.save
       redirect_to @store, notice: 'Store was successfully created.'
     else
@@ -30,9 +34,14 @@ class StoresController < ApplicationController
   end
 
   def edit
+    @store = Store.find(params[:id])
+    authorize @store
   end
 
   def update
+    current_user
+    @store = Store.find(params[:id])
+    authorize @store
     if @store.update(store_params)
       redirect_to @store, notice: 'Store was successfully updated.'
     else
@@ -41,8 +50,11 @@ class StoresController < ApplicationController
   end
 
   def destroy
+    current_user
+    @store = Store.find(params[:id])
+    authorize @store
     @store.destroy
-    redirect_to stores_url, notice: 'Store was successfully destroyed.'
+    redirect_to stores_path, notice: 'Store was successfully destroyed.'
   end
 
   private
