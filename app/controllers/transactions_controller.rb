@@ -17,6 +17,7 @@ class TransactionsController < ApplicationController
 
     @transaction.accepted!
     @amount = params[:transaction][:amount].to_f
+    @transaction.sender.balance -= 1
     @transaction.sender.balance -= @amount * 1.12
     @transaction.sender.save
     @transaction.receiver.balance += @amount * 1.12
