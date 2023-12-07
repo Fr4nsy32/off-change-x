@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :exchange]
 
   def home
-
+@store=Store.near(current_user())
   end
 
   def exchange

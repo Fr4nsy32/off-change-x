@@ -3,14 +3,18 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
- <div class="form">
+  <div class="form">
     <%= f.input :name %>
+    <%= f.input :opening_time %>
+    <%= f.input :closing_time %>
+    <%= f.input :max_cash %>
+    <%= f.input :unique_code, input_html: { readonly: true } %>
   </div>
 
   <div>
     <%= f.input :address,
-                input_html: { data: { address_autocomplete_target: "address", class: "d-none"} },
-                wrapper_html: {data: { controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+                input_html: { data: { address_autocomplete_target: "address"}, class: "d-none" },
+                wrapper_html: {data: { controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
   </div>
 
   <div>

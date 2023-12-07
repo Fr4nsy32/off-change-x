@@ -26,6 +26,7 @@ class TransactionsController < ApplicationController
       @store = Store.find_by(unique_code: params[:transaction][:receiver])
       @transaction.receiver = @store.user.wallets.where(main: true).first
     end
+
     if @transaction.save
       redirect_to wallets_path, notice: "Transaction was successfully created."
       else
