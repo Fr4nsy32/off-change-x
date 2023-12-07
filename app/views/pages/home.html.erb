@@ -3,6 +3,7 @@
 <head>
   <title>Offchangex - Currency Exchange</title>
   <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-WkBD2H9R8jJD1zZzz5xUHCNbpDIv7gxx68bLpIFMM4cPL9Pe1R6uo/BH2E7FjjmHlpdI7u9qiXbI5TB+nqcc3dQ==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -21,9 +22,8 @@
     </div>
   </div>
 
-  <!-- Currency List Container -->
   <div class="currency-list-container">
-    <h2>Currency List</h2>
+    <h2>Favorite Currencies</h2>
     <p>Last updated <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %></p>
 
     <div class="currency-rectangle">
@@ -62,14 +62,31 @@
       </div>
     </div>
 
-    <!-- Add more currency rectangles as needed -->
+    <div class="currency-rectangle add-currency">
+      <%= link_to new_currency_path, class: 'add-currency-link' do %>
+        <div class="add-currency-button">
+          <i class="fas fa-plus"></i>
+        </div>
+      <% end %>
+      <div class="currency-details">
+        <div class="currency-code">Add</div>
+        <div class="currency-name">New Currency</div>
+      </div>
+      <div class="currency-value">
+        <div class="top-value">1 NEW = 1 USD</div>
+        <div class="bottom-value">1 USD = 1 NEW</div>
+      </div>
+    </div>
 
   </div>
 
-  <!-- Card-like Container -->
   <div class="card-container">
+<<<<<<< HEAD
     <!-- Transaction button -->
     <!-- Add other elements within the card if needed -->
+=======
+    <button><%= link_to "Transaction", new_transaction_path %></button>
+>>>>>>> master
   </div>
 
 </body>
