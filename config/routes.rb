@@ -9,9 +9,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get "exchange", to: "pages#exchange"
+  get "exchange", to: "pages#exchange", as: 'exchange'
 
+<<<<<<< HEAD
   resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+=======
+  resources :currencies, only: [:new, :create]
+  resources :stores, only: [:index, :show, :new, :create, :edit, :update]
+>>>>>>> master
   resources :transactions, only: [:new, :create, :edit, :update]
   resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
