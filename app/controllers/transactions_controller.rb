@@ -20,10 +20,12 @@ class TransactionsController < ApplicationController
       end
       @transaction.accepted!
       @amount = params[:transaction][:amount].to_f
+      @transaction.rate = 1.234
       @transaction.sender.balance -= 1
       @transaction.sender.balance -= @amount
       @transaction.sender.save
-      @transaction.receiver.balance += @amount * params[:transaction][:rate].to_f
+      @transaction.receiver.balance += @amount * @transaction.rate
+      # @transaction.receiver.balance += @amount * params[:transaction][:rate].to_f
       @transaction.receiver.save
     else
       @transaction.sender = Wallet.find_by(user_id: current_user)
