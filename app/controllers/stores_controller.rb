@@ -23,7 +23,6 @@ class StoresController < ApplicationController
   def new
     @store = current_user.stores.build
     authorize @store
-    @store.unique_code = SecureRandom.hex(3)
   end
 
   def create

@@ -1,14 +1,35 @@
 <h1>Stores</h1>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-<% @stores.each do |store| %>
-  <div>
-    <h2><%= link_to store.name, store %></h2>
-    <p>Location: <%= store.address %></p>
+<div class="container">
+  <!-- Map Area -->
+  <div class="row mb-3">
+    <div class="col-12" style="height: 300px;"> <!-- Adjust height as needed -->
+      <div data-controller="map"
+           data-map-markers-value="<%= @markers.to_json %>"
+           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+           id="map-container">
+        <!-- Map will be displayed here -->
+      </div>
+    </div>
   </div>
-<% end %>
 
-<%= link_to 'New Store', new_store_path %>
+  <!-- Store Cards -->
+  <div class="row">
+    <div class="col-12">
+      <% @stores.each do |store| %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to store.name, store %></h5>
+            <p class="card-text">Location: <%= store.address %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- New Store Button -->
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'New Store', new_store_path, class: "btn btn-primary w-100" %>
+    </div>
+  </div>
+</div>
