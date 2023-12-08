@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Your Wallets</title>
+  <!-- Your head content here -->
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-  <h1>Your Wallets</h1>
 
-  <div class="wallets-container">
-    <% @wallets.each do |wallet| %>
-      <%= link_to wallet_path(wallet[:id]) do %>
-        <div class="wallet-item">
-          <p><%= wallet.name %></p>
-          <p><%= wallet[:currency] %></p>
-          <p><%= wallet.balance %></p>
-        </div>
+  <header>
+    <!-- Your header content here -->
+    <h1 class="wallet-title">Your Wallets</h1>
+  </header>
+
+  <main>
+    <!-- Your main content here -->
+    <div class="wallet-container">
+      <% @wallets.each do |wallet| %>
+        <%= link_to wallet_path(wallet[:id]) do %>
+          <div class="wallet-item">
+            <p><%= wallet.name %></p>
+            <p><%= wallet[:currency] %></p>
+            <p><%= wallet.balance %></p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Your footer content here -->
+  </footer>
+
+  <div class="link-buttons">
+    <%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
+    <%= link_to 'New Wallet', new_wallet_path, class: 'btn btn-primary' %>
   </div>
 
-<<<<<<< Updated upstream
-<%= link_to 'Back', root_path %>
-=======
-  <%= link_to 'New Wallet', new_wallet_path %>
-  <%= link_to 'Back', root_path %>
 </body>
 </html>
->>>>>>> Stashed changes
