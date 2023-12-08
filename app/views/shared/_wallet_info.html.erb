@@ -3,6 +3,6 @@
     <h2>Main Wallet Information</h2>
   </div>
   <div class="card-body">
-    <p>Balance: <%= number_to_currency(current_user.main_wallet.balance) %></p>
+    <p>Balance: <%= number_to_currency(current_user.main_wallet.balance, unit: "€") %></p>
   </div>
 </div>
