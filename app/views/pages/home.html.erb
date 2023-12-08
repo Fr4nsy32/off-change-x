@@ -22,7 +22,7 @@
 
 
     <div class="buttons">
-      <%= button_to "CHANGE AT THE STORE", stores_path, method: :get, class: 'store-button' %>
+      <%= button_to "CHANGE AT THE STORE", new_transaction_path, method: :get, class: 'store-button' %>
       <a href="<%= exchange_path %>" class="exchange-currency-button">EXCHANGE CURRENCY</a>
     </div>
   </div>
@@ -67,26 +67,11 @@
       </div>
     </div>
 
-    <div class="currency-rectangle add-currency">
-      <%= link_to new_currency_path, class: 'add-currency-link' do %>
-        <div class="add-currency-button">
-          <i class="fas fa-plus"></i>
-        </div>
-      <% end %>
-      <div class="currency-details">
-        <div class="currency-code">Add</div>
-        <div class="currency-name">New Currency</div>
-      </div>
-      <div class="currency-value">
-        <div class="top-value">1 NEW = 1 USD</div>
-        <div class="bottom-value">1 USD = 1 NEW</div>
-      </div>
-    </div>
-
   </div>
 
   <div class="card-container">
-    <button><%= link_to "Transaction", new_transaction_path %></button>
+    <!-- Transaction button -->
+    <!-- Add other elements within the card if needed -->
   </div>
 
 </body>

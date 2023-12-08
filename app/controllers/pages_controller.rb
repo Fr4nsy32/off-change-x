@@ -5,6 +5,10 @@ class PagesController < ApplicationController
 @store=Store.near(current_user())
   end
 
+  def index
+    @records = policy_scope(Record)
+  end
+
   def exchange
     current_user
     @wallets = Wallet.where(user_id: current_user)
@@ -29,5 +33,4 @@ class PagesController < ApplicationController
     #   converted_amount: converted_amount
     # }
   end
-
 end

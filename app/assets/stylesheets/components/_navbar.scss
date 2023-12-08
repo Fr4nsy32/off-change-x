@@ -10,8 +10,10 @@
 .navbar-brand img {
   width: 120px;
 }
-@media (max-width: 768px) {
-  .navbar-lewagon .fa-user {
-    display: inline-block; /* Assure que l'icône est visible sur les petits écrans */
-  }
+
+.navbar-lewagon .navbar-collapse .nav-link {
+  color: goldenrod;
+  font-weight: bold;
+  padding-right: 15px;
+  padding-left: 15px;
 }
