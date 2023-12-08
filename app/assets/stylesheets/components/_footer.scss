@@ -3,7 +3,7 @@
   flex-direction: column;
   background-image: linear-gradient(to bottom, #212492,  #622aa3);
   width: 100%;
-  padding: 4px 0;
+  padding-bottom: 0px;
   flex-shrink: 0;
   margin-top: 10px;
   position: relative;
@@ -30,8 +30,8 @@
   }
 
   i.fa-solid {
-    font-size: 38px;
+    font-size: 24px;
     color: goldenrod;
-    text-shadow: goldenrod 0px 0px 10px;
+    text-shadow: goldenrod 0px 0px 3px;
   }
 }

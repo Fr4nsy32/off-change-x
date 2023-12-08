@@ -1,9 +1,10 @@
 <h1><%= @store.name %></h1>
 <p>Location: <%= @store.address %></p>
 
-  <%= link_to 'Edit', edit_store_path(@store) %> |
-  <%= link_to 'Destroy', @store, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if policy(@store).edit? %>
+  <%= link_to "Edit this store", edit_store_path(@store) %> |
+<% end %>
 
-
+<%= button_to "Destroy this store", @store, method: :delete if policy(@store).destroy? %>
 
 <%= link_to 'Back', stores_path %>

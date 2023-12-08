@@ -29,6 +29,9 @@
 </div>
 
 
-<%= link_to 'Load Amount in Exchange', exchange_path, class: 'btn btn-primary' %>
+<% if policy(@wallet).edit? %>
+  <%= link_to "Load Amount in Exchange", exchange_path(@wallet), class: 'btn btn-primary' %> |
+<% end %>
 
+<%= button_to "Destroy this wallet", @wallet, method: :delete if policy(@wallet).destroy? %>
 <%= link_to 'Back', wallets_path, class: 'back-link' %>

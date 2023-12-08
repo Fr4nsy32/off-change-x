@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :payments, only: [:new, :create]
 
   resources :currencies, only: [:new, :create]
-  resources :stores, only: [:index, :show, :new, :create, :edit, :update]
+  resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :transactions, only: [:new, :create, :edit, :update]
   resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do

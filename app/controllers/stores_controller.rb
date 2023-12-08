@@ -5,6 +5,7 @@ class StoresController < ApplicationController
 
   def index
     @stores = Store.all
+    @stores = policy_scope(Store)
     @markers = Store.geocoded.map do |store|
       {
         lat: store.latitude,
@@ -15,16 +16,19 @@ class StoresController < ApplicationController
   end
 
   def show
+    authorize @store
     # Actions pour la vue show
   end
 
   def new
     @store = current_user.stores.build
+    authorize @store
     @store.unique_code = SecureRandom.hex(3)
   end
 
   def create
     @store = current_user.stores.build(store_params)
+    authorize @store
     # S'assurer que le unique_code est généré
     @store.unique_code = SecureRandom.hex(3) unless @store.unique_code.present?
     if @store.save
@@ -35,9 +39,14 @@ class StoresController < ApplicationController
   end
 
   def edit
+    @store = Store.find(params[:id])
+    authorize @store
   end
 
   def update
+    current_user
+    @store = Store.find(params[:id])
+    authorize @store
     if @store.update(store_params)
       redirect_to @store, notice: 'Store was successfully updated.'
     else
@@ -46,8 +55,11 @@ class StoresController < ApplicationController
   end
 
   def destroy
+    current_user
+    @store = Store.find(params[:id])
+    authorize @store
     @store.destroy
-    redirect_to stores_url, notice: 'Store was successfully destroyed.'
+    redirect_to stores_path, notice: 'Store was successfully destroyed.'
   end
 
   private
