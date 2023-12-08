@@ -10,10 +10,10 @@ class TransactionPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    Wallet.find(record.receiver_id).user == user
   end
 
   def destroy?
-    true
+    user.id == record.sender_id && record.status == "pending"
   end
 end

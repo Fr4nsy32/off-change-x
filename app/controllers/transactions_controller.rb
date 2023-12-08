@@ -41,7 +41,7 @@ class TransactionsController < ApplicationController
   def edit
     current_user
     @transaction = Transaction.find(params[:id])
-    authorize @transaction
+    redirect_to wallets_path unless authorize @transaction
   end
 
   def update

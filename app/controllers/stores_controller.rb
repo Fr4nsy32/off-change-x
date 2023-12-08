@@ -16,30 +16,21 @@ class StoresController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
     authorize @store
-=======
     # Actions pour la vue show
->>>>>>> master
   end
 
   def new
     @store = current_user.stores.build
-<<<<<<< HEAD
     authorize @store
-=======
     @store.unique_code = SecureRandom.hex(3)
->>>>>>> master
   end
 
   def create
     @store = current_user.stores.build(store_params)
-<<<<<<< HEAD
     authorize @store
-=======
     # S'assurer que le unique_code est généré
     @store.unique_code = SecureRandom.hex(3) unless @store.unique_code.present?
->>>>>>> master
     if @store.save
       redirect_to @store, notice: 'Store was successfully created.'
     else
