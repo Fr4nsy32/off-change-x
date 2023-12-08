@@ -11,8 +11,12 @@
   <div class="banner">
     <h1>Hello <%= current_user.first_name %>!</h1>
     <%= render partial: 'shared/dropdown' %>
+<<<<<<< Updated upstream
 
     <%= link_to wallet_path(current_user.main_wallet), class: 'wallet-info-link' do %>
+=======
+    <%= link_to wallets_path(current_user.main_wallet), class: 'wallet-info-link' do %>
+>>>>>>> Stashed changes
       <%= render partial: 'shared/wallet_info' %>
     <% end %>
 

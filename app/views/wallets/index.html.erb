@@ -1,15 +1,29 @@
-<h1>Your Wallets</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Wallets</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <h1>Your Wallets</h1>
 
-<div class="wallets-container">
-  <% @wallets.each do |wallet| %>
-    <%= link_to wallet_path(wallet[:id]) do %>
-    <div class="wallet-item">
-        <p><%= wallet.name %></p>
-        <p><%= wallet[:currency] %></p>
-        <p><%= wallet.balance %></p>
-      </div>
-  <% end %>
-<% end %>
-</div>
+  <div class="wallets-container">
+    <% @wallets.each do |wallet| %>
+      <%= link_to wallet_path(wallet[:id]) do %>
+        <div class="wallet-item">
+          <p><%= wallet.name %></p>
+          <p><%= wallet[:currency] %></p>
+          <p><%= wallet.balance %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
+<<<<<<< Updated upstream
 <%= link_to 'Back', root_path %>
+=======
+  <%= link_to 'New Wallet', new_wallet_path %>
+  <%= link_to 'Back', root_path %>
+</body>
+</html>
+>>>>>>> Stashed changes
