@@ -48,6 +48,9 @@ Rails.application.configure do
   # Raise exceptions for disallowed deprecations.
   config.active_support.disallowed_deprecation = :raise
 
+  config.hosts << "a663-93-34-149-205.ngrok-free.app"
+  config.hosts << "a663-93-34-149-205.ngrok-free.app"
+
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
