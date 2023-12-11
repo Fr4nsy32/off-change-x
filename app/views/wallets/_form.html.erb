@@ -1,8 +1,15 @@
-<div class="wallets-form">
-  <%= simple_form_for [@user, @wallet] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :currency, collection: ["EUR", "USD", "GPB"] %>
-    <%= f.input :main %>
-    <%= f.button :submit %>
-  <% end %>
-</div>
+<%= form_with(model: @wallet, local: true, html: { class: 'wallet-form' }) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currency %>
+    <%= form.text_field :currency %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Wallet' %>
+  </div>
+<% end %>
