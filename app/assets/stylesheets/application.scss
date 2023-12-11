@@ -6,6 +6,8 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import "components/map";
+
 
 // Your CSS partials
 @import "components/index";
@@ -13,3 +15,4 @@
 @import "components/footer";
 @import "pages/exchange";
 @import 'wallets/index';
+@import 'wallets/errors';
