@@ -28,13 +28,20 @@ export default class extends Controller {
     //navigator.geolocation.getCurrentPosition(this.success, this.error, options);
   };
 
+  search() {
+    navigator.geolocation.getCurrentPosition(this.success.bind(this), this.error.bind(this), options);
+    this.#fitMapToMarkers(getCurrentPosition);
+  };
+
   success(pos) {
     const crd = pos.coords;
     console.log("Your current position is:");
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
-    let newMarkers = [...this.markersValue, {lng: crd.longitude, lat: crd.latitude, info_window_html: "You are here", marker_html: '<i class="fa-solid fa-map-pin"></i>'}]
+    let newMarkers = [...this.markersValue, {lng: crd.longitude, lat: crd.latitude,
+                                            info_window_html: "You are here",
+                                            marker_html: '<i class="fa-solid fa-map-pin"></i>'}]
     // console.log(this.markersValue)^
     this.markersValue = newMarkers
 
