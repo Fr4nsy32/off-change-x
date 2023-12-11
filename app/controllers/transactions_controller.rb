@@ -50,15 +50,15 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
     authorize @transaction
     if @transaction.update(transaction_params)
+      if @transaction.status == "accepted"
+        @transaction.sender.balance -= @transaction.amount
+        @transaction.receiver.balance += @transaction.amount
+        @transaction.sender.save
+        @transaction.receiver.save
+      end
       redirect_to exchange_path, notice: "Transaction accepted your balance is updated."
     else
       render :edit, status: :unprocessable_entity
-    end
-    if @transaction.status == "accepted"
-      @transaction.sender.balance -= @transaction.amount
-      @transaction.receiver.balance += @transaction.amount
-      @transaction.sender.save
-      @transaction.receiver.save
     end
   end
 
