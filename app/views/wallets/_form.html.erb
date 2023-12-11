@@ -1,3 +1,14 @@
+<% if @wallet.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <h2 class="error-title">You cannot create this wallet:</h2>
+    <ul class="error-list">
+      <% @wallet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with(model: @wallet, local: true, html: { class: 'wallet-form' }) do |form| %>
   <div class="field">
     <%= form.label :name %>
@@ -10,6 +21,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit 'Create Wallet' %>
+    <%= form.submit 'Create Wallet', style: 'background: linear-gradient(to bottom, rgba(33, 36, 146, 0.7), rgba(98, 42, 163, 0.7)); padding: 10px; text-decoration: none; color: #ffffff; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;', data: { turbo: "false" } %>
   </div>
 <% end %>
