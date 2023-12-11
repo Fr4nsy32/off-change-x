@@ -1,14 +1,23 @@
-<%= simple_form_for([@user, @transaction]) do |f| %>
+<%= simple_form_for([@user, @transaction], html: { class: 'wallet-form' }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :amount %>
-    <%= f.input :receiver %>
-    <%= f.input :sender,  collection: current_user.wallets %>
-   </div>
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.input :amount, label: false %>
+  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="field">
+    <%= f.label :receiver %>
+    <%= f.input :receiver, label: false %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sender %>
+    <%= f.input :sender, collection: current_user.wallets, label: false %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, style: 'background: linear-gradient(to bottom, rgba(33, 36, 146, 0.7), rgba(98, 42, 163, 0.7)); padding: 10px; text-decoration: none; color: #ffffff; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;' %>
   </div>
 <% end %>
