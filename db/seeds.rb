@@ -80,6 +80,8 @@ end
 
 wallets_data = [
 
+  # Wallets for User 1
+
   { name: "User1 Wallet 1", currency: "USD", balance: 1000.0, user_id: 1, main: true },
   { name: "User1 Wallet 2", currency: "EUR", balance: 800.0, user_id: 1, main: false },
   { name: "User1 Wallet 3", currency: "GBP", balance: 600.0, user_id: 1, main: false },
