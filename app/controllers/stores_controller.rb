@@ -6,11 +6,13 @@ class StoresController < ApplicationController
   def index
     @stores = Store.all
     @stores = policy_scope(Store)
-    @markers = Store.geocoded.map do |store|
+    @markers = @stores.geocoded.map do |store|
       {
         lat: store.latitude,
         lng: store.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { store: store })
+        info_window_html: render_to_string(partial: "info_window", locals: { store: store }),
+        marker_html: render_to_string(partial: "marker", locals: { store: store })
+
       }
     end
   end

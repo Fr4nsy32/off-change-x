@@ -1,15 +1,18 @@
-<div id="amount-section">
+<div id="amount-section" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>" >
   <h1>Currency Exchange</h1>
-  <div class="form-fields" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>" >
+  <div class="form-fields">
     <%= simple_form_for([@user, @transaction]) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= f.input :amount %>
+        <%= f.input :amount,
+                    input_html: { data: { currency_target: "amount" } } %>
 
         <!-- Sender Currency Dropdown -->
-        <%= f.input :sender, collection: @wallets.map { |wallet| wallet.currency } %>
+        <%= f.input :sender,
+                     collection: @wallets.map { |wallet| wallet.currency },
+                     input_html: { data: { currency_target: "wallet" } } %>
 
         <!-- Receiver Currency Dropdown -->
         <%= f.input :receiver, prompt: "Select Receiver Currency",
@@ -25,6 +28,22 @@
       </div>
     <% end %>
   </div>
+  <div id="checkout" class="d-none" data-currency-target="checkout">
+    <h2>Checkout
+    <i class="fa-solid fa-file-invoice-dollar"></i>
+    </h2>
+    <hr>
+    <p data-currency-target="amountcheck"><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">Amount:</strong>   0</p>
+    <hr>
+    <p data-currency-target="walletscheck"><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">EUR USD</strong></p>
+    <p data-currency-target="ratecheck"><strong>1.2233</strong></p>
+    <hr>
+    <hr>
+    <p><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">Commision:</strong>   1.0</p>
+    <hr>
+    <p data-currency-target="totalcheck"><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">Total:</strong>   101</p>
+  </div>
+
   <div id="currency-pairs">
     <!-- currency pairs and values here -->
   </div>

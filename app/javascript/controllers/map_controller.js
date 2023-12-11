@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from 'mapbox-gl' // Don't forget this!
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 const options = {
   enableHighAccuracy: true,
@@ -33,7 +34,7 @@ export default class extends Controller {
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
-    let newMarkers = [...this.markersValue, {lng: crd.longitude, lat: crd.latitude, info_window_html: "You are here"}]
+    let newMarkers = [...this.markersValue, {lng: crd.longitude, lat: crd.latitude, info_window_html: "You are here", marker_html: '<i class="fa-solid fa-map-pin"></i>'}]
     // console.log(this.markersValue)^
     this.markersValue = newMarkers
 
@@ -50,8 +51,10 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
+      const customMarker = document.createElement("div")
+    customMarker.innerHTML = marker.marker_html // Add this
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup) // Add this
         .addTo(this.map)
