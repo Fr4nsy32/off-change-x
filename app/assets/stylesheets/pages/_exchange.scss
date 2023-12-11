@@ -1,9 +1,14 @@
 #amount-section {
   text-align: center;
   padding-top: 15px;
+
   background: rgb(98,42,163);
   background: linear-gradient(0deg, rgba(98,42,163,1) 0%, rgba(98,42,163,0.6178804285386029) 78%, rgba(253,187,45,0.8307655826002276) 100%);
-}
+  width: 100%;           /* Sets the width to full viewport width */
+  height: 100vh;         /* Sets the height to full viewport height */
+  margin: 0;             
+ }
+
 
 .form-fields {
   display: flex;

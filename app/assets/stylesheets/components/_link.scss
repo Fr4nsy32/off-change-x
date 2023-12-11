@@ -1,0 +1,49 @@
+a {
+  color: black; /* Sets the link color to black */
+  font-size: 18px; /* Adjust the font size as needed */
+  font-family: 'Rethink Sans', sans-serif; /* Specifies the font family */
+  font-style: italic; /* Makes the font italic */
+  text-decoration: none; /* Removes the underline */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  font-weight: 500; /* Slightly bold for prominence */
+  position: relative; /* Position relative for pseudo-elements */
+}
+
+
+/* Hover Effect */
+a:hover {
+  color: #0b0004; /* Change color on hover to something bright */
+  text-decoration: none; /* Keep text-decoration off */
+  font-family: 'Rethink Sans', sans-serif; /* Specifies the font family */
+  font-style: italic; /* Makes the font italic */
+  font-size: 25px;
+}
+
+/* After Hover Effect */
+a:after {
+  content: '';
+  position: absolute;
+  font-weight: 500;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #622aa3; /* Same color as hover effect */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+/* Hover Effect for After Element */
+a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  text-shadow: 0 0 2px rgba(0,0,0,0.25); /* Adds a subtle text shadow */
+}
+
+/* Focus Style */
+a:focus {
+  outline: none;
+  text-shadow: 0 0 2px rgba(0,0,0,0.25); /* Adds a subtle text shadow */
+  box-shadow: 0 0 0 3px #622aa3; /* Subtle focus outline */
+}
