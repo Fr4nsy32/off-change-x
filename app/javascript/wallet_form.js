@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   function determineCode(currencyName) {
-  
+
     return 'CODE';
   }
 });
