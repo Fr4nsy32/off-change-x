@@ -1,4 +1,4 @@
-/* import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 const options = {
   enableHighAccuracy: true,
@@ -18,13 +18,14 @@ export default class extends Controller {
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
+    location.assign(`/stores?place=${crd.latitude},${crd.longitude}`)
   }
 
   error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
-  connect() {
+ search() {
   navigator.geolocation.getCurrentPosition(this.success, this.error, options);
   }
+
 }
- */

@@ -12,8 +12,18 @@ class StoresController < ApplicationController
         lng: store.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: { store: store }),
         marker_html: render_to_string(partial: "marker", locals: { store: store })
-
       }
+    end
+    if params[:place].present?
+      @stores = Store.near(params[:place], 10)
+    @markers = @stores.geocoded.map do |store|
+      {
+        lat: store.latitude,
+        lng: store.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { store: store }),
+        marker_html: render_to_string(partial: "marker", locals: { store: store })
+      }
+    end
     end
   end
 
