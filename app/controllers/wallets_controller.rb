@@ -21,18 +21,19 @@ class WalletsController < ApplicationController
 
   def create
     @wallet = Wallet.new(wallet_params)
-    @wallet.user = current_user
     authorize @wallet
+    @wallet.user = current_user
 
     respond_to do |format|
       if @wallet.save
+        format.html { redirect_to @wallet, notice: 'Wallet successfully created.' }
         format.json { render json: { success: true, message: 'Wallet successfully created.' } }
       else
+        format.html { render :new }
         format.json { render json: { success: false, errors: @wallet.errors.full_messages }, status: :unprocessable_entity }
       end
     end
   end
-
 
   def edit
     current_user

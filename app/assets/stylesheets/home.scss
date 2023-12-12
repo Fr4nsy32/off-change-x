@@ -5,13 +5,16 @@
 
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding: 10px;
+  padding-bottom: 70px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background-color: white;
+  background-image: url("OffChangeX.png");
+  background-position: right;
+  background-size: cover;
   color: #000;
 }
 

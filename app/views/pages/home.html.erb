@@ -11,7 +11,6 @@
  <div class="banner">
   <% if user_signed_in? %>
     <h1>Hello <%= current_user.first_name %>!</h1>
-    <%= render partial: 'shared/dropdown' %>
     <%= link_to wallets_path(current_user.main_wallet), class: 'wallet-info-link' do %>
 
       <%= render partial: 'shared/wallet_info' %>
