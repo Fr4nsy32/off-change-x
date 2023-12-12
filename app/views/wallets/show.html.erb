@@ -1,31 +1,36 @@
 <div class="wallet-details">
-  <div class="balance-bar">
-      <h3><%= @wallet.currency %> Balance</h3>
-      <h4><%= @wallet.name %></h4>
-      <h2><%= number_to_currency(@wallet.balance, unit: @wallet.currency, precision: 2, format: "%n %u") %></h2>
-  </div>
-  <div class="checkout-bar">
-      <% if @wallet.main == true %>
-      <%= form_tag payments_path do %>
-      <h6><i class="fa-solid fa-circle-plus"></i> Add funds</h6>
-  <div class="field-group">
-    <%= text_field_tag(:amount, params[:amount], class: 'form-control') %> <%= @wallet.currency %>
-  </div>
+  <div class="hero">
+    <div class="logo">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
+    <div class="balance-bar">
+        <h3><%= @wallet.currency %> Balance</h3>
+        <h4><%= @wallet.name %></h4>
+        <h2><%= number_to_currency(@wallet.balance, unit: @wallet.currency, precision: 2, format: "%n %u") %></h2>
+    </div>
+    <div class="checkout-bar">
+        <% if @wallet.main == true %>
+        <%= form_tag payments_path do %>
+        <h6><i class="fa-solid fa-circle-plus"></i> Add funds</h6>
+    <div class="field-group">
+      <%= text_field_tag(:amount, params[:amount], class: 'form-control') %> <%= @wallet.currency %>
+    </div>
 
-  <div class="stripe-button-group">
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="Updating your wallet"
-            data-amount="10000"
-            data-locale="auto">
-    </script>
-  </div>
+    <div class="stripe-button-group">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Updating your wallet"
+              data-amount="10000"
+              data-locale="auto">
+      </script>
+    </div>
 
-    <% end %>
-    <% end %>
-    <hr class="transaction-divider">
+      <% end %>
+      <% end %>
+    </div>
   </div>
-
 
   <h2>Transactions</h2>
   <div class="transactions">
@@ -55,14 +60,15 @@
       <% end %>
     <% end %>
   </div>
-</div>
 
-
-<div class="links">
-  <% if policy(@wallet).edit? %>
-    <%= link_to "Load Amount in Exchange", exchange_path(@wallet), class: 'btn btn-primary' %>
+  <div class="links">
+    <% if policy(@wallet).edit? %>
+  <%= link_to exchange_path(@wallet), class: 'btn btn-primary' do %>
+    <i class="fa-solid fa-circle-plus"></i> Add money
   <% end %>
+<% end %>
 
-  <%= button_to "Destroy this wallet", @wallet, method: :delete if policy(@wallet).destroy? %>
-  <%= link_to 'Back', wallets_path, class: 'back-link' %>
+    <%= button_to "Destroy this wallet", @wallet, method: :delete if policy(@wallet).destroy? %>
+    <%= link_to 'Back', wallets_path, class: 'back-link' %>
+  </div>
 </div>
