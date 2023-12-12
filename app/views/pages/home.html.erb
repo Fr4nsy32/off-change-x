@@ -8,6 +8,15 @@
 
 <body>
 
+  <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+    <% end %>
+    <% if user_signed_in? %>
+    <h3 data-flag-target="place"></h3>
+    <% end %>
+  </div>
+
  <div class="banner">
   <% if user_signed_in? %>
     <h1>Hello <%= current_user.first_name %>!</h1>
@@ -25,10 +34,10 @@
 
 
     <div class="buttons">
-      <%= link_to exchange_path, class: "exchange-currency-button" do %>
+      <%= link_to  new_transaction_path, class: "exchange-currency-button" do %>
       <span>STORE</span><i class="fa-solid fa-store"></i>
       <% end %>
-       <%= link_to new_transaction_path, class: "exchange-currency-button" do %>
+       <%= link_to exchange_path, class: "exchange-currency-button" do %>
       <span>EXCHANGE</span><i class="fa-solid fa-money-bill-trend-up"></i>
       <% end %>
     </div>
@@ -53,7 +62,7 @@
     </div>
 
     <div class="currency-rectangle">
-      <div class="flag-icon flag-icon-eu"></div>
+      <div class="flag-icon flag-icon-eu" style="background: green"></div>
       <div class="currency-details">
         <div class="currency-code">EUR</div>
         <div class="currency-name">Euro</div>

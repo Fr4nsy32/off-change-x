@@ -2,8 +2,10 @@
 @import 'components/wallet_info';
 @import 'components/currency_list';
 @import 'components/add_currency_button_styles';
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@300&display=swap');
 
 body {
   margin: 10px;
@@ -12,7 +14,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  // font-family: Arial, sans-serif;
+  background-image: url("OffChangeX.png");
   background-position: right;
   background-size: cover;
   color: #000;
@@ -23,7 +27,7 @@ h1{
   text-shadow: 0 0 5px goldenrod;
   letter-spacing: 5px;
   font-weight: bold;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'REM', sans-serif;
   font-size: 35px;
 }
 
@@ -53,6 +57,7 @@ h1{
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 10px;
+  background: white;
 }
 
 .flag-icon {
@@ -129,13 +134,13 @@ h1{
 //   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0iYmRhIj4KICAgIDxkYXRhIGZpbGw9ImJsYWNrIiBzcmM9Ii8vaW1hZ2UvZm9ybXMvd2VicGFjay9EZXZlbG9wbWVudFN5bnRheC5zc2w/ZG93bmxvYWQ9MApmb3JtZXJwYXJlbnQ9ImF1dG9tYXRlN2E2ODA1ODg5MTciPgogIDwvcmVjdD4KPC9zdmc+Cg==') center center no-repeat;
 // }
 
-.flag-icon-eu {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCBmaWxsPSIjMTJhNjQ5IiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxjYXJkIGZpbGw9ImJsYWNrIiAvPgogIDwvcmVjdD4KPC9zdmc+Cg==') center center no-repeat;
-}
+// .flag-icon-eu {
+//   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCBmaWxsPSIjMTJhNjQ5IiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxjYXJkIGZpbGw9ImJsYWNrIiAvPgogIDwvcmVjdD4KPC9zdmc+Cg==') center center no-repeat;
+// }
 
-.flag-icon-gb {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCBmaWxsPSIjZmZmIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQ4MCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxkYXRhIGZpbGw9IiNmZmYiIHdpZHRoPSIzMjAiIGhlaWdodD0iNDgwIiAvPgogICAgICAgICA8cmVmcyBmaWxsPSIjZmZmIiAvPgogICAgICAgIDxkYXRhIGZpbGw9IiNmZmYiIHdpZHRoPSIyMTMuMzMiIGhlaWdodD0iNDgwIiAvPgogICAgICAgIDxkYXRhIGZpbGw9IiMwMTIxNjkiIHdpZHRoPSIyMTMuMzMiIGhlaWdodD0iNDgwIiAvPgogICAgPC9yZWN0Pgo8L3N2Zz4K') center center no-repeat;
-}
+// .flag-icon-gb {
+//   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCBmaWxsPSIjZmZmIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQ4MCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxkYXRhIGZpbGw9IiNmZmYiIHdpZHRoPSIzMjAiIGhlaWdodD0iNDgwIiAvPgogICAgICAgICA8cmVmcyBmaWxsPSIjZmZmIiAvPgogICAgICAgIDxkYXRhIGZpbGw9IiNmZmYiIHdpZHRoPSIyMTMuMzMiIGhlaWdodD0iNDgwIiAvPgogICAgICAgIDxkYXRhIGZpbGw9IiMwMTIxNjkiIHdpZHRoPSIyMTMuMzMiIGhlaWdodD0iNDgwIiAvPgogICAgPC9yZWN0Pgo8L3N2Zz4K') center center no-repeat;
+// }
 
 .exchange-currency-button {
   text-decoration: none;
@@ -150,5 +155,14 @@ h1{
   &:hover {
     color: #FFBD59;
     text-shadow: 0 0 5px goldenrod;
+  }
+}
+
+#navhome{
+  display: flex;
+  justify-content: space-between;
+
+  h3{
+    align-self: center;
   }
 }
