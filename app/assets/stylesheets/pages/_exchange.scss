@@ -1,8 +1,20 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding-bottom: 50px;
+  background-image: url('OffChangeX.png');
+  background-size: cover;
+  background-position: center;
+}
+
 #amount-section {
   text-align: center;
-  margin-top: 20px;
   color: white;
-  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 0;
 }
 
 input, select {
@@ -54,4 +66,6 @@ span {
 
 .exchange-heading {
   font-family: 'Noto Sans', sans-serif;
+  color: white !important;
+  text-shadow: none !important;
 }
