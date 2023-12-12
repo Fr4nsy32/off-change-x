@@ -18,12 +18,18 @@ body {
   color: white;
 }
 
-input, select, textarea {
-  border: none;
-  outline: none;
-  /* To remove the default browser outline on focus */
-  box-shadow: none;
-  /* If there's a box shadow being applied */
+.form-exchange input,
+.form-exchange select,
+.form-exchange textarea {
+  border: 1px solid #ced4da; /* adds a light grey border */
+  outline: none; /* removes the focus outline */
+  box-shadow: none; /* ensures no shadow is applied */
+  border-radius: 8px; /* applies rounded corners */
+  background-color: white; /* sets the background color to white */
+  padding: 10px; /* adds some space inside the inputs */
+  font-size: 16px; /* sets a consistent font size */
+  color: #495057; /* sets the text color to a dark grey for better readability */
+  margin-bottom: 10px; /* adds space below each input */
 }
 
 .button-container {
@@ -36,6 +42,7 @@ input, select, textarea {
   margin-bottom: 8px;
   color: black;
   border-radius: 8px;
+  background-color: white;
 
   .form-label {
     font-size: 24px;
