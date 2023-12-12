@@ -9,6 +9,8 @@ class WalletsController < ApplicationController
   end
 
   def show
+    @body_classes ||= []
+    @body_classes << 'exclude-navbar'
     @wallet = Wallet.find(params[:id])
     authorize @wallet
   end
