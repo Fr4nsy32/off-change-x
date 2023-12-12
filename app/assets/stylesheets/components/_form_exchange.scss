@@ -1,0 +1,67 @@
+
+.form-exchange {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #d6d8db;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+  .custom-prompt,
+  .custom-dropdown {
+    color: #495057;
+    font-size: 14px;
+  }
+
+  .field {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #495057 !important;
+      font-size: 14px;
+      text-align: left !important;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+
+      &:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    }
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+  .form-actions {
+    text-align: center;
+
+    .btn {
+      padding: 10px;
+      text-decoration: none;
+      color: #ffffff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.btn-create-transaction {
+        background: linear-gradient(to bottom, rgba(33, 36, 146, 0.7), rgba(98, 42, 163, 0.7));
+      }
+
+      &:hover {
+        background-color: darken(#000, 10%);
+      }
+    }
+  }
+}
