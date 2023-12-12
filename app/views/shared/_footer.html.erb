@@ -2,13 +2,23 @@
   <div class="footer-links">
     <ul>
       <li>
-        <%= link_to exchange_path do %>
-          <i class="fa-solid fa-money-bill-transfer"></i>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house"></i>
         <% end %>
       </li>
       <li>
-        <%= link_to root_path do %>
-          <i class="fa-solid fa-house"></i>
+        <%= link_to edit_user_registration_path do %>
+          <i class="fa-solid fa-wrench"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to wallets_path do %>
+          <i class="fa-solid fa-wallet"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to exchange_path do %>
+          <i class="fa-solid fa-money-bill-transfer"></i>
         <% end %>
       </li>
       <li>
