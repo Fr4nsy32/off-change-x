@@ -1,8 +1,8 @@
-<div class="card">
-  <h5 class="card-title">Wallet Information</h5>
+<div class="card-main">
+  <h5 class="card-title">Main · <%= current_user.main_wallet.currency %></h5>
   <div class="card-body">
     <% if current_user.main_wallet.present? %>
-      <p class="card-info">Balance: <%= number_to_currency(current_user.main_wallet.balance) %></p>
+      <p class="card-info"><%= number_to_currency(current_user.main_wallet.balance, unit: "€") %></p>
     <% else %>
       <p class="card-info">No main wallet found for the current user.</p>
     <% end %>
