@@ -1,16 +1,47 @@
-#amount-section {
-  text-align: center;
-  margin-top: 20px;
-  color: white;
-  margin-bottom: 25px;
+body.exclude-navbar .navbar {
+  display: none;
 }
 
-input, select {
-  margin-bottom: 10px;
+body {
+  background-image: none;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 8px;
+  background-image: url("OffChangeX.png");
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the div */
+  background-size: cover; /* Covers the entire div without stretching the image */
+  margin-bottom: 8px;
+  border-radius: 16px;
+  color: white;
+}
+
+input, select, textarea {
+  border: none;
+  outline: none;
+  /* To remove the default browser outline on focus */
+  box-shadow: none;
+  /* If there's a box shadow being applied */
 }
 
 .button-container {
   margin-top: 10px;
+}
+
+.form-inputs {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: black;
+
+  .form-label {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: black;
+  }
 }
 
 #convert-button {
@@ -21,8 +52,8 @@ input, select {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 20px;
+  margin-top: 24px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -53,5 +84,21 @@ span {
 }
 
 .exchange-heading {
-  font-family: 'Noto Sans', sans-serif;
+  margin-top: 12px;
+  padding: 8px 24px;
+  color: black;
+  text-shadow: 0 0 0px;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+}
+
+#navhome{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+
+  h3{
+    align-self: center;
+  }
 }
