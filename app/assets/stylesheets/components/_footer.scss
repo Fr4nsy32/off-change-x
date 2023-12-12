@@ -24,7 +24,7 @@
   }
 
   li {
-    margin: 10px 0px;
+    margin: 4px 0px;
   }
 
   a {
@@ -35,5 +35,17 @@
     font-size: 24px;
     color: goldenrod;
     text-shadow: goldenrod 0px 0px 3px;
+  }
+}
+
+@media (min-width: 1180px) {
+  .footer-links ul {
+    align-items: center; /* Center-align the stacked links */
+    justify-content: space-around;
+    padding: 0 120px;
+  }
+
+  .footer-links li {
+    margin: 8px 0; /* Increase vertical margin for tap targets */
   }
 }

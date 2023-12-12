@@ -21,10 +21,10 @@
 
   </head>
 
-  <body>
+  <body class="<%= body_classes %>">
     <div class="content">
-      <%# <%= render "shared/navbar" %>
-            <%= yield %>
+      <%= render "shared/navbar" unless body_classes.include?('exclude-navbar') %>
+      <%= yield %>
       <%= render "shared/flashes" %>
     </div>
     <div class="footer">
