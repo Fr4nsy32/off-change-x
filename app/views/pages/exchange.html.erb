@@ -1,5 +1,7 @@
 <div id="amount-section" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>" >
-  <h1>Currency Exchange</h1>
+  <h1 style=" color: goldenrod;
+  text-shadow: goldenrod 0px 0px 10px;
+  font-weight: bold">Currency Exchange</h1>
   <div class="form-fields">
     <%= simple_form_for([@user, @transaction]) do |f| %>
       <%= f.error_notification %>
