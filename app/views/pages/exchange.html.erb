@@ -1,52 +1,44 @@
-<div id="amount-section" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>" >
-  <h1 style=" color: goldenrod;
-  text-shadow: goldenrod 0px 0px 10px;
-  font-weight: bold">Currency Exchange</h1>
+<div id="amount-section" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>">
+  <h1 class="exchange-heading">Currency Exchange</h1>
   <div class="form-fields">
-    <%= simple_form_for([@user, @transaction]) do |f| %>
+    <%= simple_form_for([@user, @transaction], html: { class: 'form-exchange' }) do |f| %>
       <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= f.input :amount,
-                    input_html: { data: { currency_target: "amount" } } %>
+        <%= f.input :amount, input_html: { data: { currency_target: "amount" } },
+                     label_html: { style: "color: #495057; font-size: 14px;" } %>
 
         <!-- Sender Currency Dropdown -->
-        <%= f.input :sender,
-                     collection: @wallets.map { |wallet| wallet.currency },
-                     input_html: { data: { currency_target: "wallet" } } %>
+        <%= f.input :sender, collection: @wallets.map { |wallet| wallet.currency },
+                     input_html: { data: { currency_target: "wallet" }, class: "custom-dropdown" },
+                     label_html: { style: "color: #495057; font-size: 14px;" } %>
 
         <!-- Receiver Currency Dropdown -->
         <%= f.input :receiver, prompt: "Select Receiver Currency",
             collection: [],
-            input_html: { data: { currency_target: "currency" } }%>
+            input_html: { data: { currency_target: "currency" }, class: "custom-prompt" },
+            label_html: { style: "color: #495057; font-size: 14px;" } %>
+
         <%= f.input :rate, prompt: "Select Receiver Currency",
             input_html: { data: { currency_target: "rates" } },
             as: :hidden %>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit %>
+        <%= f.button :submit, class: 'btn btn-create-transaction' %>
       </div>
     <% end %>
   </div>
-  <div id="checkout" class="d-none" data-currency-target="checkout">
-    <h2>Checkout
-    <i class="fa-solid fa-file-invoice-dollar"></i>
-    </h2>
-    <hr>
-    <p data-currency-target="amountcheck"><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">Amount:</strong>   0</p>
-    <hr>
-    <p data-currency-target="walletscheck"><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">EUR USD</strong></p>
-    <p data-currency-target="ratecheck"><strong>1.2233</strong></p>
-    <hr>
-    <hr>
-    <p><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">Commision:</strong>   1.0</p>
-    <hr>
-    <p data-currency-target="totalcheck"><strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">Total:</strong>   101</p>
-  </div>
 
-  <div id="currency-pairs">
-    <!-- currency pairs and values here -->
+  <div id="checkout" data-currency-target="checkout">
+    <h2>CHECKOUT SUMMARY
+      <i class="fa-solid fa-file-invoice-dollar"></i>
+    </h2>
+    <div class="thicker-line"></div>
+    <p data-currency-target="amountcheck"><strong style="color: white; font-weight: normal">Amount:</strong> 0</p>
+    <p data-currency-target="walletscheck"><strong style="color: white; font-weight: normal">EUR USD</strong></p>
+    <p data-currency-target="ratecheck"><strong style="color: white; font-weight: normal">Rate:</strong> 1.2233</p>
+    <p><strong style="color: white; font-weight: Normal">Commission:</strong> 1.0</p>
+    <p data-currency-target="totalcheck"><strong style="color: white; font-weight: 600">TOTAL TO PAY:</strong> 101</p>
   </div>
 </div>
