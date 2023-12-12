@@ -1,9 +1,12 @@
  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 <h1>Stores</h1>
 
-<div data-controller="geolocation">
-  <button data-action="click->geolocation#search">Near me</button>
+<div class="links" >
+  <div data-controller="geolocation">
+    <a class='button' data-action="click->geolocation#search" class="btn btn-primary">Near me</a>
+  </div>
 </div>
+
 <div class="container">
   <!-- Map Area -->
   <div class="row mb-3">
@@ -19,22 +22,30 @@
 
   <!-- Store Cards -->
   <div class="row">
-    <div class="col-12">
-      <% @stores.each do |store| %>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to store.name, store %></h5>
-            <p class="card-text">Location: <%= store.address %></p>
+    <% @stores.each do |store| %>
+          <div class="transactions">
+            <div class="transaction-divider">
+              <div class="transaction">
+                <p class="transaction-details-one"><%= link_to store.name, store %>
+                <%= store.address %></p>
+              </div>
+            </div>
+            <div class="transaction">
+              <div class="transaction-details-two">
+                <p class="card-text"><%= store.opening_time %></p>
+                <p class="card-text"><%= store.closing_time %></p>
+              </div>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 
   <!-- New Store Button -->
-  <div class="row">
-    <div class="col-12">
-      <%= link_to 'New Store', new_store_path, class: "btn btn-primary w-100" %>
+  <div class="links">
+    <div class="col-12 text-center mt-3">
+    <%= link_to new_store_path, class: 'btn' do %>
+    <i class="fa-solid fa-circle-plus"></i> New store
+  <% end %>
     </div>
   </div>
 </div>
