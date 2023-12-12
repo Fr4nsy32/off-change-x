@@ -1,25 +1,37 @@
-<div id="amount-section" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>">
-  <h1 class="exchange-heading">Currency Exchange</h1>
+<div class="exchange-page" id="amount-section" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>">
+  <div class="hero">
+    <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+      <% if user_signed_in? %>
+      <h3 data-flag-target="place"></h3>
+    <% end %>
+      </div>
+    </div>
+    <h1 class="exchange-heading">How much do you want to convert?</h1>
   <div class="form-fields">
     <%= simple_form_for([@user, @transaction], html: { class: 'form-exchange' }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :amount, input_html: { data: { currency_target: "amount" } },
-                     label_html: { style: "color: #495057; font-size: 14px;" } %>
+        <%= f.input :amount,  prompt: "Enter amount",
+            input_html: { data: { currency_target: "amount" } },
+            label_html: { style: "color: #495057; font-size: 16px;" } %>
 
         <!-- Sender Currency Dropdown -->
-        <%= f.input :sender, collection: @wallets.map { |wallet| wallet.currency },
-                     input_html: { data: { currency_target: "wallet" }, class: "custom-dropdown" },
-                     label_html: { style: "color: #495057; font-size: 14px;" } %>
+        <%= f.input :sender,  prompt: "Choose currency...",
+            collection: @wallets.map { |wallet| wallet.currency },
+            input_html: { data: { currency_target: "wallet" }, class: "custom-dropdown" },
+            label_html: { style: "color: #495057; font-size: 16px;" } %>
 
         <!-- Receiver Currency Dropdown -->
-        <%= f.input :receiver, prompt: "Select Receiver Currency",
+        <%= f.input :receiver, prompt: "Choose currency...",
             collection: [],
             input_html: { data: { currency_target: "currency" }, class: "custom-prompt" },
-            label_html: { style: "color: #495057; font-size: 14px;" } %>
+            label_html: { style: "color: #495057; font-size: 16px;" } %>
 
-        <%= f.input :rate, prompt: "Select Receiver Currency",
+        <%= f.input :rate, prompt: "Choose currency...",
             input_html: { data: { currency_target: "rates" } },
             as: :hidden %>
       </div>
