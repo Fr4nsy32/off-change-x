@@ -11,7 +11,6 @@ export default class extends Controller {
     symbols.forEach((symbol) => {
       this.currencyTarget.insertAdjacentHTML('beforeend', `<option data-currency-target="tag" data-action="click->currency#fire" value="${symbol}">${symbol}</option>`)
     })
-    console.log(this.walletscheckTarget);
     // const url = `http://api.exchangeratesapi.io/v1/latest?access_key=f354999ca0f845d898c5563ae88f1544&base=EUR&symbols=${symbols.join(',')}`
     // fetch(url)
     // .then(response => response.json())
@@ -27,9 +26,6 @@ export default class extends Controller {
   }
 
   fire(){
-    console.log(this.walletTarget.value);
-    // console.log(this.keyValue);
-    console.log(this.currencyTarget.value);
     const url = `http://api.exchangeratesapi.io/v1/latest?access_key=${this.keyValue}&base=EUR&symbols=${this.currencyTarget.value}`
     fetch(url)
     .then(response => response.json())
