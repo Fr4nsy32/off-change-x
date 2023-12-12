@@ -15,7 +15,7 @@ class StoresController < ApplicationController
       }
     end
     if params[:place].present?
-      @stores = Store.near(params[:place], 10)
+      @stores = Store.near(params[:place], params[:distance] || 10)
     @markers = @stores.geocoded.map do |store|
       {
         lat: store.latitude,

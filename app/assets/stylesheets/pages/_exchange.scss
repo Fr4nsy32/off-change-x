@@ -1,5 +1,25 @@
+<<<<<<< HEAD
 body.exclude-navbar .navbar {
   display: none;
+=======
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding-bottom: 50px;
+  background-image: url('OffChangeX.png');
+  background-size: cover;
+  background-position: center;
+}
+
+#amount-section {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 0;
+>>>>>>> master
 }
 
 body {
@@ -101,4 +121,3 @@ span {
   h3{
     align-self: center;
   }
-}
