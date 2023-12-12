@@ -6,6 +6,12 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   padding-bottom: 50px;
+  background-color: white;
+}
+
+body.wallets-page {
+  background-color: white;
+  margin: 0;
 }
 
 
@@ -13,12 +19,12 @@ h1.wallet-title {
   color: white;
   text-shadow: none;
   font-family: 'Helvetica Neue', sans-serif;
-  margin: 0; 
+  margin: 0;
 
 }
 
 body.wallets-page .navbar {
-  display: none;
+  display: none !important;
 }
 
 header {
