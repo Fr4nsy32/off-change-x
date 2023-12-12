@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+.wallet-details {
+  .balance-bar {
+    margin: 0px 16px;
+    padding: 16px 0px;
+    flex: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
+    h2 {
+      // Add your styles for the wallet name here
+      margin: 16px 8px;
+      font-size: 40px;
+      font-weight: 550;
+    }
+
+    h3 {
+      // Add your styles for the "Balance" heading here
+      margin: 32px 8px 0px;
+    }
+
+    h4 {
+      // Add your styles for the wallet balance here
+      margin: 0px 8px 0px;
+    }
+  }
+
+  .checkout-bar {
+    margin: 16px 16px;
+    padding: 0px 16px;
+    // Add your styles for the checkout bar here
+    display: flex;
+    flex-direction: column;
+    form {
+      // Add your styles for the form here
+      display: flex; // Use flexbox for layout
+      flex-wrap: wrap; // Allow items to wrap to a new line
+      align-items: center; // Align items vertically
+      justify-content: flex-start; // Align items to the start of the flex container
+
+
+      input[type="text"] {
+        // Add your styles for the amount input field here
+        width: auto; // Or you can set a specific width like width: 200px;
+        max-width: 200px; // Prevent the input from taking up the full width
+        margin-right: 12px; // Add space between the input and the currency
+      }
+
+      .stripe-button {
+        // Add your styles for the Stripe button here
+        padding: 10px 20px; /* Adjust the values as needed */
+        width: auto;
+        border-radius: 4px;
+        background-image: linear-gradient(to bottom, #622aa3, #212492);
+        background-size: cover;
+        overflow: hidden;
+        box-shadow: none;
+      }
+    }
+    .field-group,
+    .stripe-button-group {
+      display: block;
+      display: flex;
+      margin-right: 16px;
+      flex-direction: row;
+      flex: 100%;
+      margin-bottom: 15px; /* Adjust the margin as needed */
+      align-items: center;
+}
+  }
+
+  h2 {
+    font-size: 32px;
+    margin: 16px 16px;
+    padding: 0px 16px;// Add your styles for the "Transactions" heading here
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: lighter;
+    margin: 16px 16px;
+    color: rgb(66, 64, 64);
+  }
+
+  .transaction-divider {
+    border: 0;
+    height: 1px;
+    background-color: #ccc; /* Light grey color */
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .lighten {
+    font-weight: lighter;
+    color: rgb(66, 64, 64);
+  }
+
+  .transactions {
+    padding: 0px 16px;
+    font-size: 16px;
+    width: 100%;
+    flex-grow: 1;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .transaction-divider {
+      border: 0;
+      height: 1px;
+      background-color: #ccc; /* Light grey color */
+      margin: 20px 16px 20px;
+    }
+
+    .transaction {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      width: 100%;
+      margin: auto;
+      padding: 0px 8px;
+      margin: 32px 0px;
+
+      .transaction-details-one,
+      .transaction-details-two {
+        flex: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 24px;
+      }
+
+      .transaction-details-two {
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      i {
+        font-size: 24px;
+        padding: 0px 8px;
+      }
+
+      p {
+        // Add your styles for the transaction details here
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .btn {
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom, #622aa3, #212492);
+    color: goldenrod;
+    text-decoration: none;
+    border-radius: 4px;
+    align-items: center;
+    margin: 10px;
+    font-weight: 500;
+    border-style: none;
+    // Add other button styles here
+  }
+
+  .back-link {
+    padding: 10px 20px;
+    color: rgb(66, 64, 64);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 36px;
+    // Add other link styles here
+  }
+}
