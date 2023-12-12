@@ -2,6 +2,7 @@
 @import 'components/wallet_info';
 @import 'components/currency_list';
 @import 'components/add_currency_button_styles';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 
 body {
@@ -17,8 +18,17 @@ body {
   color: #000;
 }
 
+h1{
+  color: goldenrod;
+  text-shadow: 0 0 5px goldenrod;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px;
+}
+
 .banner {
-  background-color: #ffffff;
+  background-color: transparent;
   color: #000;
   padding: 10px;
   text-align: center;
@@ -100,7 +110,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .store-button, .exchange-currency-button {
@@ -115,9 +125,9 @@ body {
 }
 
 
-.flag-icon-us {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0iYmRhIj4KICAgIDxkYXRhIGZpbGw9ImJsYWNrIiBzcmM9Ii8vaW1hZ2UvZm9ybXMvd2VicGFjay9EZXZlbG9wbWVudFN5bnRheC5zc2w/ZG93bmxvYWQ9MApmb3JtZXJwYXJlbnQ9ImF1dG9tYXRlN2E2ODA1ODg5MTciPgogIDwvcmVjdD4KPC9zdmc+Cg==') center center no-repeat;
-}
+// .flag-icon-us {
+//   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0iYmRhIj4KICAgIDxkYXRhIGZpbGw9ImJsYWNrIiBzcmM9Ii8vaW1hZ2UvZm9ybXMvd2VicGFjay9EZXZlbG9wbWVudFN5bnRheC5zc2w/ZG93bmxvYWQ9MApmb3JtZXJwYXJlbnQ9ImF1dG9tYXRlN2E2ODA1ODg5MTciPgogIDwvcmVjdD4KPC9zdmc+Cg==') center center no-repeat;
+// }
 
 .flag-icon-eu {
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCBmaWxsPSIjMTJhNjQ5IiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxjYXJkIGZpbGw9ImJsYWNrIiAvPgogIDwvcmVjdD4KPC9zdmc+Cg==') center center no-repeat;
@@ -129,4 +139,16 @@ body {
 
 .exchange-currency-button {
   text-decoration: none;
+  border-radius: 30px;
+  text-align: center;
+  // color: goldenrod;
+  // text-shadow: 0 0 5px goldenrod;
+  margin-bottom: 15px;
+  width: 200px;
+  margin-top: 10px;
+
+  &:hover {
+    color: #FFBD59;
+    text-shadow: 0 0 5px goldenrod;
+  }
 }
