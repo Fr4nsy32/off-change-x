@@ -1,20 +1,25 @@
 .currency-list-container {
-  background-color: rgb(247, 247, 247);
+  background-color: transparent;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
+  border-radius: 20px;
+  // border: 1px solid white;
+  // box-shadow: white 0px 0px 3px;
 }
 
-.currency-list {
+.currency-list-container {
   h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: goldenrod;
+    text-shadow: 0 0 5px goldenrod;
+    letter-spacing: 2px;
+    font-weight: bolder;
   }
 
   p {
-    color: #666;
+    color: black;
     margin-bottom: 10px;
   }
 
