@@ -51,27 +51,33 @@ main {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card {
+.card-main {
   padding: 20px;
+  background-color: transparent;
+  padding-bottom: 8px;
 }
 
-.card-title,
-.card-info,
-.card-balance {
-  font-size: 1.5em;
-  color: #000000;
-  margin: 0;
-}
+// .card-title,
+// .card-info,
+// .card-balance {
+//   font-size: 1.5em;
+//   color: #000000;
+//   margin: 0;
+// }
 
 .card-title {
-  font-weight: bold;
   margin-bottom: 5px;
+  font-style: normal;
 }
 
 .card-info {
   font-size: 1.2em;
-  color: #6c757d;
+  color: goldenrod;
+  text-shadow: 0 0 5px goldenrod;
+  letter-spacing: 5px;
   margin-bottom: 10px;
+  font-weight: bold;
+  font-style: normal;
 }
 
 .card-balance {
