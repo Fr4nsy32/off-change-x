@@ -1,9 +1,12 @@
-  <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
-    <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
+ <div class="hero">
+    <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+      <% if user_signed_in? %>
+      <h3 data-flag-target="place"></h3>
     <% end %>
-    <% if user_signed_in? %>
-    <h3 class="flag" data-flag-target="place"></h3>
-    <% end %>
-  </div>
+      </div>
+    </div>
+<h1 class="exchange-heading">How much do you want to send?</h1>
 <%= render "form", transaction: @transaction %>
