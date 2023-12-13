@@ -8,16 +8,16 @@
   </div>
 
   <div class="field">
-    <%= f.label :receiver %>
+    <%= f.label "Store code" %>
     <%= f.input :receiver, label: false %>
   </div>
 
   <div class="field">
-    <%= f.label :sender %>
+    <%= f.label "From wallet" %>
     <%= f.input :sender, collection: current_user.wallets, label: false %>
   </div>
 
   <div class="actions">
-    <%= f.button :submit, style: 'background: linear-gradient(to bottom, rgba(33, 36, 146, 0.7), rgba(98, 42, 163, 0.7)); padding: 10px; text-decoration: none; color: #ffffff; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;' %>
+    <%= f.button :submit, "Send money", style: 'background: linear-gradient(to bottom, rgba(33, 36, 146, 0.7), rgba(98, 42, 163, 0.7)); padding: 10px; text-decoration: none; color: #ffffff; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;' %>
   </div>
 <% end %>

@@ -1,12 +1,17 @@
 <body style="background-image: none">
  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-<h1>Stores</h1>
+  <div class="hero">
+    <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+      <% if user_signed_in? %>
+      <h3 data-flag-target="place"></h3>
+    <% end %>
+      </div>
+    </div>
+<h1 style="font-size: 28px; margin-bottom: 30px; text-align: center">OffchangeX partners</h1>
 
-<div class="links" >
-  <div data-controller="geolocation">
-    <a data-action="click->geolocation#search" class="btn">Near me</a>
-  </div>
-</div>
 
 <div class="container">
   <!-- Map Area -->
@@ -20,6 +25,11 @@
       </div>
     </div>
   </div>
+<div class="links" >
+  <div data-controller="geolocation">
+    <a data-action="click->geolocation#search" class="btn">Near me</a>
+  </div>
+</div>
   <!-- Store Cards -->
   <div class="row">
     <% @stores.each do |store| %>
