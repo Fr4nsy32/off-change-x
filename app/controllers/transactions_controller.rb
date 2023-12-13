@@ -71,7 +71,7 @@ class TransactionsController < ApplicationController
   def proxy
     @transaction = Transaction.first
     authorize @transaction
-    url = URI.parse("http://api.exchangeratesapi.io/v1/latest?access_key=f354999ca0f845d898c5563ae88f1544&base=EUR&symbols=#{params[:currency]}")
+    url = URI.parse("http://api.exchangeratesapi.io/v1/latest?access_key=#{params[:access_key]}&base=EUR&symbols=#{params[:currency]}")
     req = Net::HTTP::Get.new(url.to_s)
     res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)

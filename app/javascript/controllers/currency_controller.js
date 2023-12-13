@@ -35,7 +35,7 @@ export default class extends Controller {
         'Content-Type': 'application/json',
         "X-CSRF-Token": document.getElementsByName('csrf-token')[0].content
       },
-      body: JSON.stringify({currency: this.currencyTarget.value})
+      body: JSON.stringify({currency: this.currencyTarget.value, access_key: this.keyValue})
     })
     .then(response => response.json())
     .then((data) => {
