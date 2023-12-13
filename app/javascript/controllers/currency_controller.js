@@ -41,6 +41,8 @@ export default class extends Controller {
       this.totalcheckTarget.lastChild.nodeValue = `      ${parseFloat(this.amountTarget.value) + parseFloat(this.commcheckTarget.lastChild.nodeValue)}`
       // this.totalcheckTarget.lastChild.nodeValue = `      ${(this.amountTarget.value * this.ratesTarget.value).toFixed(2)}`
       this.checkoutTarget.classList.remove("d-none")
+      // console.log(this.buttonTarget);
+      // this.buttonTarget.classList.remove("disabled")
     })
 }
 }
