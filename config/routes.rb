@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   resources :currencies, only: [:new, :create]
   resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :transactions, only: [:new, :create, :edit, :update]
+  resources :transactions, only: [:new, :create, :edit, :update] do
+    collection do
+      post :proxy
+    end
+  end
   resources :wallets, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
       patch 'set_main'

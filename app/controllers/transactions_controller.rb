@@ -1,3 +1,8 @@
+require 'net/http'
+require 'uri'
+require 'json'
+
+
 class TransactionsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: [:index], raise: false
 
@@ -61,6 +66,17 @@ class TransactionsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def proxy
+    @transaction = Transaction.first
+    authorize @transaction
+    url = URI.parse("http://api.exchangeratesapi.io/v1/latest?access_key=#{params[:access_key]}&base=EUR&symbols=#{params[:currency]}")
+    req = Net::HTTP::Get.new(url.to_s)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+    http.request(req)
+    }
+    render json: res.body
   end
 
   private

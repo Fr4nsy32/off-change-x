@@ -26,10 +26,20 @@ export default class extends Controller {
   }
 
   fire(){
-    const url = `http://api.exchangeratesapi.io/v1/latest?access_key=${this.keyValue}&base=EUR&symbols=${this.currencyTarget.value}`
-    fetch(url)
+    console.log(this.currencyTarget);
+    // const url = `http://api.exchangeratesapi.io/v1/latest?access_key=${this.keyValue}&base=EUR&symbols=${this.currencyTarget.value}`
+    const url =  "/transactions/proxy"
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        "X-CSRF-Token": document.getElementsByName('csrf-token')[0].content
+      },
+      body: JSON.stringify({currency: this.currencyTarget.value, access_key: this.keyValue})
+    })
     .then(response => response.json())
     .then((data) => {
+      console.log(data);
       this.ratesTarget.value = ""
       this.ratesTarget.innerHTML = ""
       this.ratesTarget.value = Object.values(data.rates)[0]
