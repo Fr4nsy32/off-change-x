@@ -1,9 +1,7 @@
 #checkout {
   z-index: 1;
   border-radius: 20px;
-  border: 1px solid white;
   padding: 15px 0 5px 0;
-  box-shadow: white 0px 0px 3px;
   margin-bottom: 120px;
   max-width: 500px;
   margin: 0 auto;
@@ -17,16 +15,22 @@
 #checkout h2 {
   color: goldenrod;
   font-weight: bolder;
-  font-size: x-large;
+  text-align: center;
+  font-size: 24px;
+}
+
+.card i.fa-solid {
+  margin-bottom: 8px;
 }
 
 #checkout p {
   display: flex;
   justify-content: space-between;
-  color: goldenrod;
-  font-weight: bolder;
+  color: white;
+  font-size: 16px;
   margin-left: 30px;
   margin-right: 30px;
+  font-weight: bolder;
 }
 
 #checkout hr {
@@ -37,4 +41,38 @@
 #checkout .thicker-line {
   border-top: 2px solid white;
   margin-bottom: 10px;
+}
+
+.checkout-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkout-details-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.checkout-details-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  align-items: flex-end;
+  font-size: 16px;
+  font-weight: bold;
+  p {
+    font-weight: bold !important;
+  }
+}
+
+#checkout .checkout-details-two [data-currency-target] {
+  font-weight: bold !important;
 }

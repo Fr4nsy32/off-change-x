@@ -53,19 +53,6 @@ body {
   }
 }
 
-#convert-button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin-top: 24px;
-  cursor: pointer;
-  border-radius: 5px;
-}
 #currency-pairs {
   display: flex;
   flex-direction: column;
@@ -105,5 +92,40 @@ span {
 
   h3{
     align-self: center;
+  }
+}
+
+.card {
+  background-image: url('OffChangeX.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  border-radius: 16px;
+  margin: 10px auto; /* This will center the card horizontally */
+  padding-bottom: 10px;
+  width: 400px; /* Adjust the width as needed */
+  max-width: 100%; /* Ensures it doesn't exceed the width of the parent container */
+}
+
+.form-actions {
+  .btn {
+  padding: 10px 20px;
+  background-image: linear-gradient(to bottom, #622aa3, #212492);
+  color: goldenrod;
+  text-decoration: none;
+  border-radius: 4px;
+  align-items: center;
+  margin: 10px;
+  font-weight: 500;
+  border-style: none;
+  // Add other button styles here
   }
 }

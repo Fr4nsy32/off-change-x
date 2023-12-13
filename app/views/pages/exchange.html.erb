@@ -44,15 +44,29 @@
     <% end %>
   </div>
 
-  <div class="d-none" id="checkout" data-currency-target="checkout">
-    <h2>CHECKOUT SUMMARY
-      <i class="fa-solid fa-file-invoice-dollar"></i>
-    </h2>
-    <div class="thicker-line"></div>
-    <p data-currency-target="amountcheck"><strong style="color: black; font-weight: normal">Amount:</strong> 0</p>
-    <p data-currency-target="walletscheck"><strong style="color: black; font-weight: normal">EUR USD</strong></p>
-    <p data-currency-target="ratecheck"><strong style="color: black; font-weight: normal">Rate:</strong> 1.2233</p>
-    <p data-currency-target="commcheck"><strong style="color: black; font-weight: Normal">Commission:</strong> 1.0</p>
-    <p data-currency-target="totalcheck"><strong style="color: black; font-weight: 600">TOTAL TO PAY:</strong>100</p>
+  <div class="d-none" class="card">
+    <div id="checkout" data-currency-target="checkout">
+      <h2>
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+         <br>
+         Does everything look right?
+      </h2>
+      <div class="checkout-details">
+        <div class="checkout-details-one">
+          <p data-currency-target="amountcheck">Amount:</p>
+          <p>Currency:</p>
+          <p data-currency-target="ratecheck">Rate:</p>
+          <p data-currency-target="commcheck">Commission:</p>
+          <p data-currency-target="totalcheck">Total:</p>
+        </div>
+        <div class="checkout-details-two">
+          <p data-currency-target="amountcheck">0</p>
+          <p data-currency-target="walletscheck">EUR USD</p>
+          <p data-currency-target="ratecheck">1.2233</p>
+          <p data-currency-target="commcheck">1.0</p>
+          <p data-currency-target="totalcheck">100</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
