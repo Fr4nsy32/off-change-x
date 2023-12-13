@@ -11,26 +11,30 @@
 
   <main>
     <div class="wallet-container">
-  <% @wallets.each do |wallet| %>
-    <%= link_to wallet_path(wallet) do %>
-      <div class="wallet-item">
-        <div class="card">
-          <h2 class="card-title"><%= wallet.name %></h2>
-          <p class="card-balance"><%= wallet.balance %></p>
-          <p class="card-info"><%= wallet.currency %></p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+      <% @wallets.each do |wallet| %>
+        <%= link_to wallet_path(wallet) do %>
+          <div class="wallet-item">
+            <div class="card">
+              <div class="logo">
+                <!-- Your logo content here, e.g., an image or text -->
+                <%= image_tag 'logo.png', alt: 'Logo' %>
+              </div>
+              <h2 class="card-title"><%= wallet.name %></h2>
+              <p class="card-balance"><%= wallet.balance %></p>
+              <p class="card-info"><%= wallet.currency %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </main>
 
   <div class="wallet-buttons">
     <%= link_to "Back", root_path, class: "btn btn-back" %>
     <%= link_to new_wallet_path, class: "btn btn-new-wallet" do %>
-    New Wallet
+      New Wallet
     <% end %>
-</div>
+  </div>
 
 </body>
 </html>
