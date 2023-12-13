@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+body.exclude-navbar .navbar {
+  display: none;
+}
 
 #map-container {
   width: 100%;
@@ -48,13 +55,6 @@
   background-color: transparent;
   size: medium;
 }
-* {
-  box-sizing: border-box; /* Include padding and borders in the width */
-}
-
-body.exclude-navbar .navbar {
-  display: none;
-}
 
 h2 {
   font-size: 32px;
@@ -69,7 +69,7 @@ h3 {
   color: rgb(66, 64, 64);
 }
 
-.transaction-divider {
+.store-divider {
   border: 0;
   height: 1px;
   background-color: #ccc; /* Light grey color */
@@ -88,99 +88,7 @@ h3 {
   margin: 4px 8px;
 }
 
-.wallet-details {
-  .hero {
-  background-image: url("OffChangeX.png");
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-position: center; /* Centers the image in the div */
-  background-size: cover; /* Covers the entire div without stretching the image */
-  margin-bottom: 32px;
-  padding-bottom: 10px;
-  border-radius: 16px;
-  color: white;
-    .logo {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: right;
-      padding: 4px 12px;
-    }
-    .balance-bar {
-      margin: 0px 16px;
-      padding: 8px 0px;
-      flex: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 0px 16px;
-      h2 {
-        // Add your styles for the wallet name here
-        margin: 16px 8px;
-        font-size: 32px;
-        font-weight: 450;
-      }
-
-      h3 {
-        // Add your styles for the "Balance" heading here
-        margin: 16px 8px 0px;
-        color: goldenrod;
-        font-size: 16px;
-      }
-
-      h4 {
-        // Add your styles for the wallet balance here
-        margin: 0px 8px 0px;
-        font-size: 16px;
-      }
-    }
-  }
-
-  .checkout-bar {
-    margin: 16px 16px;
-    padding: 0px 16px;
-    // Add your styles for the checkout bar here
-    display: flex;
-    flex-direction: column;
-    form {
-      // Add your styles for the form here
-      display: flex; // Use flexbox for layout
-      flex-wrap: wrap; // Allow items to wrap to a new line
-      align-items: center; // Align items vertically
-      justify-content: flex-start; // Align items to the start of the flex container
-
-
-      input[type="text"] {
-        // Add your styles for the amount input field here
-        width: auto; // Or you can set a specific width like width: 200px;
-        max-width: 200px; // Prevent the input from taking up the full width
-        margin-right: 12px; // Add space between the input and the currency
-      }
-
-      .stripe-button {
-        // Add your styles for the Stripe button here
-        padding: 10px 20px; /* Adjust the values as needed */
-        width: auto;
-        border-radius: 4px;
-        background-image: linear-gradient(to bottom, #622aa3, #212492);
-        background-size: cover;
-        overflow: hidden;
-        box-shadow: none;
-      }
-    }
-    .field-group,
-    .stripe-button-group {
-      display: block;
-      display: flex;
-      margin-right: 16px;
-      flex-direction: row;
-      flex: 100%;
-      margin-bottom: 15px; /* Adjust the margin as needed */
-      align-items: center;
-    }
-  }
-}
-
-
-.transactions {
+.stores {
   padding: 0px 16px;
   font-size: 16px;
   width: 100%;
@@ -190,14 +98,14 @@ h3 {
   justify-content: space-between;
   align-items: center;
 
-  .transaction-divider {
+  .store-divider {
     border: 0;
     height: 1px;
     background-color: #ccc; /* Light grey color */
     margin: 20px 16px 20px;
   }
 
-  .transaction {
+  .store {
     display: flex;
     flex-grow: 1;
     flex-direction: row;
@@ -207,22 +115,22 @@ h3 {
     width: 100%;
     margin: auto;
     padding: 0px 8px;
-    margin: 22px 0px;
+    margin: 32px 0px;
 
-    .transaction-details-one {
+    .store-details-one,
+    .store-details-two {
       flex: 100%;
       display: flex;
       flex-direction: column;
-      padding: 0px 18px;
+      padding: 0px 24px;
     }
-
-    .transaction-details-two {
+    .store-details-one {
+      flex: 4;
+    }
+    .store-details-two {
+      flex: 1;
       justify-content: flex-end;
       text-align: right;
-    }
-    .element {
-      overflow-x: hidden; /* Contrôle le débordement horizontal */
-      overflow-y: hidden; /* Contrôle le débordement vertical */
     }
 
     i {
@@ -263,4 +171,15 @@ h3 {
     margin-bottom: 36px;
     // Add other link styles here
   }
+}
+
+.store-heading {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px 24px;
+  color: black;
+  text-shadow: 0 0 0px;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
 }
