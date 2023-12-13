@@ -16,4 +16,8 @@ class TransactionPolicy < ApplicationPolicy
   def destroy?
     user.id == record.sender_id && record.status == "pending"
   end
+
+  def proxy?
+    true
+  end
 end
