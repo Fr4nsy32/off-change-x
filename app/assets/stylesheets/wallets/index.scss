@@ -76,11 +76,11 @@ h1.wallet-title {
 
 .card-title {
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: lighter;
   font-family: 'Helvetica Neue', sans-serif;
+  color: white !important;
+  padding-left: 0px;
   margin-bottom: 10px;
-  color: goldenrod;
-  text-shadow: 0 0 5px goldenrod;
   letter-spacing: 5px;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Number of lines you want to display */
