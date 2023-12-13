@@ -23,7 +23,7 @@
 
   <body class="<%= body_classes %>">
     <div class="content">
-      <%= render "shared/navbar" unless body_classes.include?('exclude-navbar') %>
+      <%# <%= render "shared/navbar" unless body_classes.include?('exclude-navbar') %>
       <%= yield %>
       <%= render "shared/flashes" %>
     </div>

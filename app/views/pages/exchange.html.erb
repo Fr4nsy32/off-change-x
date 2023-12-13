@@ -1,3 +1,12 @@
+  <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+    <% end %>
+    <% if user_signed_in? %>
+    <h3 class="flag" data-flag-target="place"></h3>
+    <% end %>
+  </div>
+
 <div id="amount-section" data-controller="currency" data-currency-key-value="<%= ENV['EXCHANGE_API_KEY'] %>">
   <h1 class="exchange-heading">Currency Exchange</h1>
   <div class="form-fields">
@@ -39,6 +48,6 @@
     <p data-currency-target="walletscheck"><strong style="color: white; font-weight: normal">EUR USD</strong></p>
     <p data-currency-target="ratecheck"><strong style="color: white; font-weight: normal">Rate:</strong> 1.2233</p>
     <p><strong style="color: white; font-weight: Normal">Commission:</strong> 1.0</p>
-    <p data-currency-target="totalcheck"><strong style="color: white; font-weight: 600">TOTAL TO PAY:</strong> 101</p>
+    <p data-currency-target="totalcheck"><strong style="color: white; font-weight: 600">TOTAL TO PAY:</strong></p>
   </div>
 </div>
