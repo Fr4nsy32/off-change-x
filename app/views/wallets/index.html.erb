@@ -20,7 +20,7 @@
                 <%= image_tag 'logo.png', alt: 'Logo' %>
               </div>
               <h2 class="card-title"><%= wallet.name %></h2>
-              <p class="card-balance"><%= wallet.balance %></p>
+              <p class="card-balance"><%= wallet.balance.round(2) %></p>
               <p class="card-info"><%= wallet.currency %></p>
             </div>
           </div>

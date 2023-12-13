@@ -2,12 +2,12 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="currency"
 export default class extends Controller {
-  static targets = ["currency", "rates", "tag", "amount","amountcheck", "walletscheck", "wallet", "ratecheck", "totalcheck", "checkout"]
+  static targets = ["currency", "rates", "tag", "amount","amountcheck", "walletscheck", "wallet", "ratecheck", "totalcheck", "checkout", "commcheck"]
   static values = {
     key: String
   }
   connect() {
-    const symbols = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD']
+    const symbols = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD', 'COP']
     symbols.forEach((symbol) => {
       this.currencyTarget.insertAdjacentHTML('beforeend', `<option data-currency-target="tag" data-action="click->currency#fire" value="${symbol}">${symbol}</option>`)
     })
@@ -38,7 +38,8 @@ export default class extends Controller {
       this.amountcheckTarget.lastChild.nodeValue = `     ${this.amountTarget.value}`
       this.walletscheckTarget.innerHTML = `<strong style="color: black; text-shadow: black 0 0 0; font-weight: 600">${this.walletTarget.value} → ${this.currencyTarget.value}</strong>`
       this.ratecheckTarget.innerHTML = `<strong>${this.ratesTarget.value}</strong>`
-      this.totalcheckTarget.lastChild.nodeValue = `      ${(this.amountTarget.value * this.ratesTarget.value).toFixed(2)}`
+      this.totalcheckTarget.lastChild.nodeValue = `      ${parseFloat(this.amountTarget.value) + parseFloat(this.commcheckTarget.lastChild.nodeValue)}`
+      // this.totalcheckTarget.lastChild.nodeValue = `      ${(this.amountTarget.value * this.ratesTarget.value).toFixed(2)}`
       this.checkoutTarget.classList.remove("d-none")
     })
 }
