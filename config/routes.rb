@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   get "exchange", to: "pages#exchange", as: 'exchange'
 
   resources :payments, only: [:new, :create]
-  %w(404 422 500 503).each do |code|
-    get code, to: 'errors#show', params: { code: code }
-  end
+  get '/404', to: 'errors#not_found'
+  get '/500', to: 'errors#internal_server'
+  get '/422', to: 'errors#unprocessable'
+
   resources :currencies, only: [:new, :create]
   resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :transactions, only: [:new, :create, :edit, :update] do
