@@ -28,17 +28,29 @@ h1.wallet-title {
 
 /* Add more styles or adjustments as needed */
 
+.wallet-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* This will center the cards in the container */
+  align-items: flex-start; /* This aligns items to the top of the container */
+  gap: 10px; /* This adds space between the cards */
+  padding: 10px; /* Optional: Adds padding inside the container */
+}
+
+
 .wallet-item {
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 250px;
-  margin: 10px auto; /* Auto margin for horizontal centering */
+  height: 300px;
+  margin: auto; /* Auto margin for horizontal centering */
   text-decoration: none;
   outline: none;
   color: inherit;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -48,31 +60,36 @@ h1.wallet-title {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 150px;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
   color: white;
   position: relative;
-}
-
-.logo {
-  display: flex;
-  flex-direction: column; /* Display logo and title in a column */
-  align-items: flex-start; /* Align items to the start of the container */
-  position: absolute; /* Absolute positioning for custom logo placement */
-  top: 10px; /* Adjust top positioning as needed */
-  left: 10px; /* Adjust left positioning as needed */
-}
-
-.logo img {
-  width: 50px; /* Adjust the width of the logo */
-  height: auto; /* Maintain aspect ratio */
+  border-radius: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  i.fa-solid {
+    font-size: 36px;
+  }
 }
 
 .card-title {
-  visibility: hidden; /* Hide the card title */
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-bottom: 10px;
+  color: goldenrod;
+  text-shadow: 0 0 5px goldenrod;
+  letter-spacing: 5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines you want to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 3em; /* Adjust based on your line-height */
+  line-height: 1.5em; /* Adjust as needed */
+  white-space: normal;
+  text-overflow: ellipsis;
 }
 
 .card-info-main {
@@ -103,24 +120,32 @@ h1.wallet-title {
   right: 0;
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .wallet-buttons .btn {
-  padding: 10px;
+  padding: 10px 20px;
+  background-image: linear-gradient(to bottom, #622aa3, #212492);
+  color: goldenrod;
   text-decoration: none;
-  color: #ffffff;
-  border-radius: 5px;
+  border-radius: 4px;
+  align-items: center;
+  margin: 10px;
+  font-weight: 500;
+  border-style: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  min-width: 140px;
 }
 
 .wallet-buttons .btn-back {
   background-color: #6c757d;
+  background-image: none;
+  color: white;
 }
 
 .wallet-buttons .btn-new-wallet {
-  background: linear-gradient(to bottom, rgba(33, 36, 146, 0.7), rgba(98, 42, 163, 0.7));
 }
 
 .wallet-buttons .btn:hover {

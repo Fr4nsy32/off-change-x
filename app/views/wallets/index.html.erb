@@ -5,9 +5,17 @@
 </head>
 <body class="wallets-page" style="background-image: none" data-turbolinks="false">
 
-  <header>
-    <h1 class="wallet-title">Your Wallets</h1>
-  </header>
+  <div class="hero">
+    <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+      <% if user_signed_in? %>
+      <h3 data-flag-target="place"></h3>
+    <% end %>
+      </div>
+    </div>
+<h1 class="exchange-heading">Your wallets</h1>
 
   <main>
     <div class="wallet-container">
@@ -15,12 +23,10 @@
         <%= link_to wallet_path(wallet) do %>
           <div class="wallet-item">
             <div class="card">
-              <div class="logo">
                 <!-- Your logo content here, e.g., an image or text -->
-                <%= image_tag 'logo.png', alt: 'Logo' %>
-              </div>
+                <i class="fa-solid fa-wallet"></i>
               <h2 class="card-title"><%= wallet.name %></h2>
-              <p class="card-balance"><%= wallet.balance.round(2) %></p>
+              <p class="card-balance"><%= number_with_precision(wallet.balance, precision: 2, delimiter: ',') %></p>
               <p class="card-info"><%= wallet.currency %></p>
             </div>
           </div>
