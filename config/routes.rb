@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get "exchange", to: "pages#exchange", as: 'exchange'
 
   resources :payments, only: [:new, :create]
-
+  %w(404 422 500 503).each do |code|
+    get code, to: 'errors#show', params: { code: code }
+  end
   resources :currencies, only: [:new, :create]
   resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :transactions, only: [:new, :create, :edit, :update] do
