@@ -10,6 +10,8 @@ class PagesController < ApplicationController
   end
 
   def exchange
+    @body_classes ||= []
+    @body_classes << 'exclude-navbar'
     current_user
     @wallets = Wallet.where(user_id: current_user)
     amount = params[:amount].to_f
