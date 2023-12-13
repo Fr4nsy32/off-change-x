@@ -1,32 +1,208 @@
-<h1 style="font-size: 28px; margin-bottom: 30px; text-align: center">Edit <%= resource_name.to_s.humanize %></h1>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-exchange' }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add your existing head content here -->
+  <link rel="stylesheet" href="components/_edit_user.scss">
+  <style>
+    body.exclude-navbar .navbar {
+      display: none;
+    }
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    body {
+      background-color: white;
+      background-image: none;
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 8px;
+      background-image: url("OffChangeX.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 8px;
+      border-radius: 16px;
+      color: white;
+    }
+
+    .form-exchange input,
+    .form-exchange select,
+    .form-exchange textarea {
+      border: 1px solid #ced4da;
+      outline: none;
+      box-shadow: none;
+      border-radius: 8px;
+      background-color: white;
+      padding: 10px;
+      font-size: 16px;
+      color: #495057;
+      margin-bottom: 10px;
+    }
+
+    .button-container {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .form-inputs {
+      font-size: 16px; /* Adjusted font size */
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: black;
+      border-radius: 8px;
+      background-color: white;
+    }
+
+    .form-inputs .form-label {
+      font-size: 16px; /* Adjusted font size */
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: black;
+    }
+
+    #convert-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin-top: 24px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #currency-pairs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      border-radius: 5px;
+      padding: 10px;
+      margin: 5px 0;
+    }
+
+    span {
+      font-weight: bolder;
+      margin-right: 10px;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .exchange-heading {
+      margin-top: 12px;
+      padding: 8px 24px;
+      color: black;
+      text-shadow: 0 0 0px;
+      font-weight: 600;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    #navhome {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 16px;
+    }
+
+    #navhome h3 {
+      align-self: center;
+    }
+  </style>
+  <title>Your Webpage Title</title>
+</head>
+<body>
+  <!-- Your HTML content here -->
+  <div class="hero">
+    <h2 class="exchange-heading">Edit User</h2>
+    <div id="navhome">
+    </div>
+  </div>
+
+  <div class="edit-registration">
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-exchange' }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p class="confirmation-message">Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <%= f.input :password,
+                    hint: "Leave it blank if you don't want to change it",
+                    required: false %>
+        <%= f.input :password_confirmation,
+                    required: false %>
+        <%= f.input :current_password,
+                    hint: "We need your current password to confirm your changes",
+                    required: true %>
+      </div>
+
+      <div class="button-container">
+        <%= f.button :submit, "Update", class: 'btn btn-update' %>
+      </div>
     <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+    <div class="cancel-section">
+      Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-cancel' %>
+      <style>
+
+  .cancel-section {
+    margin-top: 20px;
+    text-align: center;
+    color: #777;
+  }
+
+  .cancel-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+ .btn-cancel {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Adjusted padding for a smaller size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Adjusted font size for consistency */
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+ }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #333; /* Set color to your preference */
+      font-size: 16px;
+  }
+</style>
+
+    </div>
+
+   <%= link_to raw('<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16675 16.6667L3.33341 10L9.16675 3.33333L10.8334 5L7.50008 8.33333H16.6667V11.6667H7.50008L10.8334 15L9.16675 16.6667Z" fill="#333"/></svg>'), :back, class: 'back-link' %>
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class: 'btn btn-create-transaction' %>
-  </div>
-<% end %>
+  <!-- Add the rest of your HTML content here -->
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+  <!-- Add your existing body scripts and content here -->
+</body>
+</html>
