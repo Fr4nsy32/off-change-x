@@ -12,7 +12,8 @@ class TransactionsController < ApplicationController
     current_user
     @transaction = Transaction.new(transaction_params)
     authorize @transaction
-    if params[:transaction][:receiver].length == 3
+    # if params[:transaction][:receiver].length == 3
+    if params[:transaction][:rate].present?
       @transaction.sender = Wallet.find_by(currency: params[:transaction][:sender])
       @transaction.receiver = Wallet.find_by(currency: params[:transaction][:receiver])
       if @transaction.receiver.nil?

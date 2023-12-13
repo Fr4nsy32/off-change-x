@@ -2,7 +2,7 @@
   <h5 class="card-title">Main · <%= current_user.main_wallet&.currency %></h5>
   <div class="card-body">
     <% if current_user.main_wallet.present? %>
-      <p class="card-info"><%= number_to_currency(current_user.main_wallet.balance, unit: "€") %></p>
+      <p class="card-info-main"><%= number_to_currency(current_user.main_wallet.balance, unit: "€") %></p>
     <% else %>
       <!-- Handle the case when main_wallet is not present -->
     <% end %>

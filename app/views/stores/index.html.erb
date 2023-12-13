@@ -1,9 +1,10 @@
+<body style="background-image: none">
  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 <h1>Stores</h1>
 
 <div class="links" >
   <div data-controller="geolocation">
-    <a class='button' data-action="click->geolocation#search" class="btn btn-primary">Near me</a>
+    <a data-action="click->geolocation#search" class="btn">Near me</a>
   </div>
 </div>
 
@@ -19,7 +20,6 @@
       </div>
     </div>
   </div>
-
   <!-- Store Cards -->
   <div class="row">
     <% @stores.each do |store| %>
@@ -49,3 +49,4 @@
     </div>
   </div>
 </div>
+</body>

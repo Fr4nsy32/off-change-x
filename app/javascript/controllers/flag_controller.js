@@ -7,7 +7,7 @@ export default class extends Controller {
     key: String
   }
   connect() {
-    const url = `https://emoji-api.com/emojis?${document.cookie.split(" ")[1]}&access_key=${this.keyValue}`
+    const url = `https://emoji-api.com/emojis?${document.cookie}&access_key=${this.keyValue}`
     fetch(url)
     .then(response => response.json())
     .then((data) => {
