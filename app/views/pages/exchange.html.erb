@@ -23,13 +23,15 @@
         <%= f.input :sender,  prompt: "Choose currency...",
           collection: @wallets.map { |wallet| wallet.currency },
           input_html: { data: { currency_target: "wallet" }, class: "custom-dropdown" },
-          label_html: { style: "color: #495057; font-size: 16px;" } %>
+          label_html: { style: "color: #495057; font-size: 16px;" },
+          label: "From wallet.." %>
 
         <!-- Receiver Currency Dropdown -->
         <%= f.input :receiver, prompt: "Choose currency...",
             collection: [],
             input_html: { data: { currency_target: "currency" }, class: "custom-prompt" },
-            label_html: { style: "color: #495057; font-size: 16px;" } %>
+            label_html: { style: "color: #495057; font-size: 16px;" },
+             label: "To wallet.." %>
 
         <%= f.input :rate, prompt: "Choose currency...",
             input_html: { data: { currency_target: "rates" } },
@@ -37,7 +39,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, class: 'btn btn-create-transaction' %>
+        <%= f.button :submit, "Exchange", class: 'btn btn-create-transaction'   %>
       </div>
     <% end %>
   </div>
