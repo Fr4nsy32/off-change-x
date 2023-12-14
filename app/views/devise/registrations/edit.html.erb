@@ -14,11 +14,12 @@
       display: flex;
       justify-content: space-between;
       padding: 8px 16px;
-      background-image: url("../assets/images/OffChangeX.png");
+      background-image: url("<%= asset_path('OffChangeX.png') %>");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
       color: white;
+      border-radius: 15px;
     }
 
     #navhome .logo {
@@ -136,7 +137,7 @@
 <body>
   <!-- Your HTML content here -->
     <div id="navhome">
-       <img src="logo.png" alt="Logo" class="logo">
+       <img src="<%= asset_path('logo.png') %>" alt="Logo" class="logo">
     </div>
 
   <h2 class="exchange-heading">Edit User</h2>
