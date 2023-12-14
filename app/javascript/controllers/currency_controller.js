@@ -45,11 +45,11 @@ export default class extends Controller {
       this.ratesTarget.value = Object.values(data.rates)[0]
       this.ratesTarget.innerHTML = Object.values(data.rates)[0]
       console.log(Object.values(data.rates)[0]);
-      this.amountcheckTarget.lastChild.nodeValue = `     ${this.amountTarget.value}`
+      this.amountcheckTarget.lastChild.nodeValue = `     ${this.amountTarget.value} €`
       this.walletscheckTarget.innerHTML = `<strong>${this.walletTarget.value} → ${this.currencyTarget.value}</strong>`
       this.ratecheckTarget.innerHTML = `<strong>${this.ratesTarget.value}</strong>`
-      this.exchangedcheckTarget.innerHTML = `      ${(this.amountTarget.value * this.ratesTarget.value ).toFixed(2)}`
-      this.totalcheckTarget.lastChild.nodeValue = `      ${parseFloat(this.amountTarget.value) + parseFloat(this.commcheckTarget.lastChild.nodeValue)}`
+      this.exchangedcheckTarget.innerHTML = `      ${(this.amountTarget.value * this.ratesTarget.value ).toFixed(2)} ${this.currencyTarget.value}`
+      this.totalcheckTarget.lastChild.nodeValue = `      ${parseFloat(this.amountTarget.value) + parseFloat(this.commcheckTarget.lastChild.nodeValue)} €`
       // this.totalcheckTarget.lastChild.nodeValue = `      ${(this.amountTarget.value * this.ratesTarget.value).toFixed(2)}`
       this.checkoutTarget.classList.remove("d-none")
       // console.log(this.buttonTarget);
