@@ -16,7 +16,7 @@
 <div class="container">
   <!-- Map Area -->
   <div class="row mb-3">
-    <div class="col-12" style="height: 300px;"> <!-- Adjust height as needed -->
+    <div class="col-12" style="height: 380px;"> <!-- Adjust height as needed -->
       <div data-controller="map"
            data-map-markers-value="<%= @markers.to_json %>"
            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
@@ -37,7 +37,7 @@
         <div class="store">
           <i class="fa-solid fa-store"></i>
           <div class="store-details-one">
-            <p><%= link_to store.name, store %></p>
+            <p><%=link_to store.name, store %></p>
             <p><%= store.address %></p>
           </div>
         <div class="store-details-two">
