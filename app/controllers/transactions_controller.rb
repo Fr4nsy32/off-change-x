@@ -37,6 +37,7 @@ class TransactionsController < ApplicationController
       @transaction.sender = Wallet.find(params[:transaction][:sender])
       @store = Store.find_by(unique_code: params[:transaction][:receiver])
       @transaction.receiver = @store.user.wallets.where(main: true).first
+      @transaction.unique_code = params[:transaction][:receiver]
     end
 
     if @transaction.save
@@ -82,6 +83,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:amount, :status, :rate)
+    params.require(:transaction).permit(:amount, :status, :rate, :unique_code)
   end
 end

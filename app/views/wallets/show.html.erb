@@ -49,7 +49,8 @@
             <% if tran.receiver.user.category != "store" %>
               <p>Exchanged with: <%= tran.receiver.currency %></p>
             <% else %>
-              <p><%= tran.receiver.user.stores[0].name %>, <%= tran.receiver.user.stores[0].address %></p>
+              <p><%= tran.receiver.user.stores.find_by(unique_code: tran.unique_code).name %>,
+               <%= tran.receiver.user.stores.find_by(unique_code: tran.unique_code).address %></p>
             <% end %>
             <p class="lighten"><%= tran.status.capitalize %></p>
           </div>
