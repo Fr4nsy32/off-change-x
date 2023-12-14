@@ -87,7 +87,7 @@ h1{
 
 .currency-rectangle .currency-details .currency-name {
   margin-top: 5px;
-  font-size: 0.9em; /* Adjust the font size as needed */
+  font-size: 0.7em; /* Adjust the font size as needed */
   color: #555;
 }
 
@@ -137,17 +137,33 @@ h1{
   margin-top: 3px;
 }
 
-.last-updated {
-  color: white !important;
-  text-align: left;
-  margin: 0;
-  padding: 0;
+.currency-list-container {
+  text-align: center;
+  margin-bottom: 30px; /* Adjust the margin-bottom as needed */
+  position: relative;
+  padding-bottom: 30px;
 }
 
 
+.last-updated {
+  color: white !important;
+  text-align: left;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+}
 
+h5.card-title {
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.7em;
+}
 
-
+.currency-list-container h2 {
+  color: white;
+  text-shadow: none;
+  margin-bottom: 10px;
+}
 
 // .flag-icon-us {
 //   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NDAiIGhlaWdodD0iNDgwIj4KICA8cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjQ4MCIgZmlsbD0iYmRhIj4KICAgIDxkYXRhIGZpbGw9ImJsYWNrIiBzcmM9Ii8vaW1hZ2UvZm9ybXMvd2VicGFjay9EZXZlbG9wbWVudFN5bnRheC5zc2w/ZG93bmxvYWQ9MApmb3JtZXJwYXJlbnQ9ImF1dG9tYXRlN2E2ODA1ODg5MTciPgogIDwvcmVjdD4KPC9zdmc+Cg==') center center no-repeat;
@@ -186,11 +202,8 @@ h1{
   align-self: center;
 }
 
-.flag-icon {
-  width: 40px; /* Set the desired width */
-  height: 30px; /* Set the desired height */
-  margin-right: 10px;
-  background-size: cover;
-  border-radius: 0; /* Remove the circular border-radius */
+.currency-rectangle .flag-icon {
+  width: 50px;  /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin-right: 7px;
 }
-
