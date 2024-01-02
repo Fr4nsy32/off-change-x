@@ -8,5 +8,12 @@
     <% end %>
       </div>
     </div>
+<div id="none" data-controller="store">
 <h1 class="exchange-heading">How much do you want to collect?</h1>
 <%= render "form", transaction: @transaction %>
+
+<div data-store-target="info" class="hero" style="line-height: 20px; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px">
+<p style="color: goldenrod; font-size: 18px; font-weight: bold"></p>
+<p  style="font-size: 18px; font-weight: 600; letter-spacing: 2px">Searching for a store..                      <i class="fa-solid fa-hourglass-half fa-spin-pulse"></i></p>
+</div>
+</div>

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :currencies, only: [:new, :create]
   resources :stores, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  get "stores/render/:unique_code", to: "stores#render_store", as: "render_store"
   resources :transactions, only: [:new, :create, :edit, :update] do
     collection do
       post :proxy

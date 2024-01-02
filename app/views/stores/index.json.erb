@@ -1,0 +1,37 @@
+{ "stores": [
+ <% @stores.each do |store| %>
+    {
+      "id": "<%= store.id %>",
+      "name": "<%= store.name %>",
+      "address": "<%= store.address %>",
+      "code": "<%= store.unique_code %>"
+      <% if store.id == 8 %>
+        }
+      <% else %>
+      },
+      <% end %>
+  <% end %>
+  ]
+}
+
+<%#
+{
+    "stores": [
+        {
+            "Name": "&quot;Store&quot;",
+            "Address": "&quot;Via Italia 18, 06024 Gubbio Perugia, Italy&quot;"
+        },
+        {
+            "Name": "&quot;Amico Mio Bar&quot;",
+            "Address": "&quot;Via Camillo Benso Conte Di Cavour 20, 10123 Turin Turin, Italy&quot;"
+        },
+        {
+            "Name": "&quot;LIDL&quot;",
+            "Address": "&quot;Via Giovanni Giolitti 7, 10123 Turin Turin, Italy&quot;"
+        },
+        {
+            "Name": "&quot;Calle de casa&quot;",
+            "Address": "&quot;Calle 112 40, 110111 Bogotá, Colombia&quot;"
+        }
+    ]
+} %>

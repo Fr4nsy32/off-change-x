@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_store, only: [:show, :edit, :update, :destroy]
+  before_action :set_store, only: [ :show, :edit, :update, :destroy]
   before_action :authorize_store_owner, only: [:edit, :update, :destroy]
 
   def index
@@ -25,6 +25,10 @@ class StoresController < ApplicationController
       }
     end
     end
+    respond_to do |format|
+      format.json
+      format.html
+    end
   end
 
   def show
@@ -32,6 +36,12 @@ class StoresController < ApplicationController
     # Actions pour la vue show
   end
 
+  def render_store
+    @store = Store.find_by(unique_code: params[:unique_code].to_s)
+    authorize @store
+    render json: @store
+
+  end
   def new
     @store = current_user.stores.build
     authorize @store

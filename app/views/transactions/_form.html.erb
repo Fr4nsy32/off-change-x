@@ -9,7 +9,8 @@
 
   <div class="field">
     <%= f.label "Store code" %>
-    <%= f.input :receiver, label: false %>
+    <%= f.input :receiver, label: false,
+    input_html: { data: { store_target: "code" }} %>
   </div>
 
   <div class="field">
