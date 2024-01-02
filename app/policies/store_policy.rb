@@ -14,6 +14,10 @@ class StorePolicy < ApplicationPolicy
     true
   end
 
+  def render_store?
+    true
+  end
+
   def create?
     true
   end
