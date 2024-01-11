@@ -73,6 +73,12 @@ the 'Near Me' feature geolocates live and displays the nearest partner on the ma
 ![Wallets](/app/assets/images/Wallet.png)
 
 <br>
+<h3> MAIN WALLET DETAILS : ⬇️ </h3>
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/1ea2f3a8-dbf3-45b3-b113-2b627116b3ad
+
+
+<br>
 <h3> FIND A STORE : ⬇️ </h3>
 
 https://github.com/Fr4nsy32/off-change-x/assets/62887350/c9c734a2-00c5-4b92-ab8e-36982d151d60
