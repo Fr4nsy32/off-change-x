@@ -75,20 +75,31 @@ the 'Near Me' feature geolocates live and displays the nearest partner on the ma
 <br>
 <h3> MAIN WALLET DETAILS : ⬇️ </h3>
 
-https://github.com/Fr4nsy32/off-change-x/assets/62887350/1ea2f3a8-dbf3-45b3-b113-2b627116b3ad
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/0c957b0f-2c27-4fd9-8017-e5f4a7edaa71
+
 
 
 <br>
 <h3> FIND A STORE : ⬇️ </h3>
 
-https://github.com/Fr4nsy32/off-change-x/assets/62887350/c9c734a2-00c5-4b92-ab8e-36982d151d60
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/ed41789f-8518-4b69-a3bb-72e273c7dbd7
+
+
 
 <br>
 <h3> SEARCH ON THE MAP : ⬇️ </h3>
 
-https://github.com/Fr4nsy32/off-change-x/assets/62887350/dac47e40-0815-4eaf-a4cb-0bf94f4aaa13
+
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/c7876be3-5f9c-4f57-b4ca-ed91d35bd5be
+
 
 <br>
 <h3> EXCHANGE CURRENCY : ⬇️ </h3>
 
-https://github.com/Fr4nsy32/off-change-x/assets/62887350/bd5cf277-b274-4376-b193-831568cb349f
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/4876ec18-d03c-4b36-8a50-197a6a56e71c
+
+
+
