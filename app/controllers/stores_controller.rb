@@ -1,7 +1,8 @@
 class StoresController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :render_store]
   before_action :set_store, only: [ :show, :edit, :update, :destroy]
   before_action :authorize_store_owner, only: [:edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   def index
     @stores = Store.all
@@ -82,6 +83,7 @@ class StoresController < ApplicationController
     @store.destroy
     redirect_to stores_path, notice: 'Store was successfully destroyed.'
   end
+
 
   private
 

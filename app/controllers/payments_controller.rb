@@ -1,9 +1,12 @@
 class PaymentsController < ApplicationController
 
+
   def new
+    skip_authorization
   end
 
   def create
+    skip_authorization
     customer = Stripe::Customer.create({
       :email => params[:stripeEmail],
       :source => params[:stripeToken]
