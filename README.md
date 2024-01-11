@@ -67,22 +67,22 @@ the 'Near Me' feature geolocates live and displays the nearest partner on the ma
 
 ![Homepage](/app/assets/images/Screenshot%202024-01-11%20163651.png)
 
-
+<br>
 <h3> WALLETS : ⬇️ </h3>
 
 ![Wallets](/app/assets/images/Wallet.png)
 
-
+<br>
 <h3> FIND A STORE : ⬇️ </h3>
 
 https://github.com/Fr4nsy32/off-change-x/assets/62887350/c9c734a2-00c5-4b92-ab8e-36982d151d60
 
-
+<br>
 <h3> SEARCH ON THE MAP : ⬇️ </h3>
 
 https://github.com/Fr4nsy32/off-change-x/assets/62887350/dac47e40-0815-4eaf-a4cb-0bf94f4aaa13
 
-
+<br>
 <h3> EXCHANGE CURRENCY : ⬇️ </h3>
 
 https://github.com/Fr4nsy32/off-change-x/assets/62887350/bd5cf277-b274-4376-b193-831568cb349f
