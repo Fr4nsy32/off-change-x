@@ -9,6 +9,7 @@ export default class extends Controller {
 
   complete() {
     const url = `https://www.offchangex.com/stores/render/${this.codeTarget.value}`
+    // const url = `http://localhost:3000/stores/render/${this.codeTarget.value}` // => Use this url when running on local server
     fetch(url, {
       method: 'GET',
       headers: {

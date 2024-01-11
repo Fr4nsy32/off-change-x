@@ -16,7 +16,9 @@
     <% end %>
     <% if user_signed_in? %>
       <h3 class="flag" data-flag-target="place"></h3>
-    <% end %>
+    <% else %>
+      <h5><%= link_to "Login", new_user_session_path, id: "log-in-home" %></h5>
+      <% end %>
   </div>
 
   <div class="banner">
