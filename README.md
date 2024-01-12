@@ -28,7 +28,7 @@ The basic concept of OffChangeX is to provide an easy way to exchange cash curre
 💰 The exchange process is run thorugh this [API](https://exchangeratesapi.io/) as an endpoint for the latest rates.
 
 📌 The map can be accessed via the [Mapbox](https://www.mapbox.com/) API using a custom map. Partners are displayed as a pin geolocated from the store address;
-the 'Near Me' feature geolocates live and displays the nearest partner on the map and as a list.
+the 'Near Me' feature [geolocates live](https://github.com/alexreisner/geocoder) and displays the nearest partner on the map and as a list.
 
 🔢 Using the unique code of a partner (displayed on the map page => list of stores), you can select the store where you wish to exchange. You can check if the shop is the right one below the form.
 
