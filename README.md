@@ -78,7 +78,27 @@ the 'Near Me' feature [geolocates live](https://github.com/alexreisner/geocoder)
 
 ![Wallets](/app/assets/images/Wallet.png)
 
+
 <br>
+<h3> EXCHANGE CURRENCY : ⬇️ </h3>
+
+
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/f0cbe90d-552e-40f7-aefc-4b364023ec1f
+
+
+
+
+<br>
+<h3> SEARCH ON THE MAP : ⬇️ </h3>
+
+
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/c7876be3-5f9c-4f57-b4ca-ed91d35bd5be
+
+
+<br>
+
 <h3> MAIN WALLET DETAILS : ⬇️ </h3>
 
 https://github.com/Fr4nsy32/off-change-x/assets/62887350/0c957b0f-2c27-4fd9-8017-e5f4a7edaa71
@@ -93,19 +113,10 @@ https://github.com/Fr4nsy32/off-change-x/assets/62887350/ed41789f-8518-4b69-a3bb
 
 
 
-<br>
-<h3> SEARCH ON THE MAP : ⬇️ </h3>
 
 
 
-https://github.com/Fr4nsy32/off-change-x/assets/62887350/c7876be3-5f9c-4f57-b4ca-ed91d35bd5be
 
-
-<br>
-<h3> EXCHANGE CURRENCY : ⬇️ </h3>
-
-
-https://github.com/Fr4nsy32/off-change-x/assets/62887350/4876ec18-d03c-4b36-8a50-197a6a56e71c
 
 
 
