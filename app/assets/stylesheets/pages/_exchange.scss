@@ -129,3 +129,28 @@ span {
   // Add other button styles here
   }
 }
+
+#sweet{
+  color: goldenrod;
+  font-weight: bold;
+}
+
+#goBack {
+  margin-top: 24px;
+  padding: 12px 24px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-image: linear-gradient(to bottom, #622aa3, #212492);
+  color: goldenrod;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+
+  &:hover {
+    background-color: darken(#000, 10%);
+  }
+}

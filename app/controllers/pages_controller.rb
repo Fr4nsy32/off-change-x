@@ -1,5 +1,8 @@
+require 'net/http'
+require 'json'
+
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :exchange]
+  skip_before_action :authenticate_user!, only: [:home, :exchange, :currency]
 
   def home
 @store=Store.near(current_user())
@@ -35,4 +38,16 @@ class PagesController < ApplicationController
     #   converted_amount: converted_amount
     # }
   end
+
+  def currency
+    url = 'https://api.frankfurter.app/latest'
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    @parsed = JSON.parse(response)
+    respond_to do |format|
+      format.html { @rates = @parsed["rates"].keys }
+      format.json { @rates = @parsed["rates"] }
+    end
+  end
+
 end

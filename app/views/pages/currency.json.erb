@@ -1,0 +1,11 @@
+{
+  "rates" : [
+ <% @rates.each do |store| %>
+      "<%= store[0] %>" ,
+      <% if store[0] == "ZAR"  %>
+        "<%= store[0] %>"
+      <% end %>
+
+  <% end %>
+  ]
+}
