@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "exchange", to: "pages#exchange", as: 'exchange'
-
+  get "currency", to: "pages#currency", as: 'currency'
   resources :payments, only: [:new, :create]
 
   resources :currencies, only: [:new, :create]

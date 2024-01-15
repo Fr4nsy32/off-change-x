@@ -43,7 +43,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       redirect_to wallets_path, notice: "Transaction was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: "Transaction was not created."
     end
   end
 
@@ -72,7 +72,7 @@ class TransactionsController < ApplicationController
   def proxy
     @transaction = Transaction.first
     authorize @transaction
-    url = URI.parse("http://api.exchangeratesapi.io/v1/latest?access_key=#{params[:access_key]}&base=EUR&symbols=#{params[:currency]}")
+    url = URI.parse("http://api.exchangeratesapi.io/v1/latest?access_key=#{params[:access_key]}&base=#{params[:base]}&symbols=#{params[:currency]}")
     req = Net::HTTP::Get.new(url.to_s)
     res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)

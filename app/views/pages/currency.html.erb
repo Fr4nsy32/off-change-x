@@ -1,0 +1,27 @@
+  <div class="hero">
+    <div id="navhome" data-controller="flag" data-flag-key-value="<%= ENV['EMOJI_API_KEY'] %>">
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+      <% if user_signed_in? %>
+      <h3 data-flag-target="place"></h3>
+    <% end %>
+      </div>
+    </div>
+    <div style="text-align: center">
+    <h1>Currency allowed<i class="fa-solid fa-caret-down fa-bounce"></i></h1>
+    </div>
+<div class="card">
+  <p>
+<% @rates.each do |rate| %>
+  <%= rate %> -
+<% end %>
+</p>
+</div>
+<div style="text-align: center">
+<br>
+<em>* You can only exchange between the currencies above, the rest of the currency can be exchangeed only with EUR(€)</em>
+<br>
+<br>
+<%= link_to "Back to exchange", exchange_path, id: "goBack"%>
+</div>
