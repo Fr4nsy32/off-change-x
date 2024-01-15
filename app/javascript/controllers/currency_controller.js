@@ -152,12 +152,13 @@ export default class extends Controller {
     Swal.fire({
       confirmButtonText: 'Try another currency',
       icon: "warning",
+      // in local environment we use the localhost link for the complete list of currencies => http://localhost:3000/currency
       html: `<div class="card">
       <p><strong>Sorry you can't exchange this currency!</strong></p>
       <br>
       <br>
       <p style="margin-bottom: 5px">You can't use <strong>${this.walletTarget.value}</strong> as a base currency.<p>
-      <p>Check the complete list <a id="sweet" href="http://localhost:3000/currency">    HERE</a></p>
+      <p>Check the complete list <a id="sweet" href="https://www.offchangex.com/currency">    HERE</a></p>
       </div>`,
     });
     // if the alert is been triggered we add the id to the button
