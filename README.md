@@ -76,7 +76,9 @@ the 'Near Me' feature [geolocates live](https://github.com/alexreisner/geocoder)
 <h3> HOMEPAGE : ⬇️ </h3>
 
 
-https://github.com/Fr4nsy32/off-change-x/assets/62887350/0f9a807d-b3a7-4dd2-8216-af55afe27929
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/eac23a62-fe2c-40a2-8255-d3da08899632
+
 
 
 <br>
