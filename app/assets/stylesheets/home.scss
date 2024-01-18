@@ -103,6 +103,7 @@ h1{
   margin-left: 10px;
   display: flex;
   flex-direction: column;
+  font-size: 14px;
 }
 
 
@@ -212,4 +213,51 @@ h5.card-title {
   width: 50px;  /* Adjust the width as needed */
   height: 50px; /* Adjust the height as needed */
   margin-right: 7px;
+}
+
+
+.button-chart{
+    text-decoration: none;
+    text-align: center;
+    margin-top: 3px;
+    width: auto;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(to bottom, #622aa3, #212492);
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0 0 10px;
+    margin-top: 3px;
+
+    &:hover {
+      color: rgb(255, 189, 89);
+      text-shadow: 0 0 5px goldenrod;
+    }
+  }
+
+.favorite{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+  padding: 15px;
+  margin-bottom: 0px;
+  background: white;
+
+}
+
+.favorite .flag-icon{
+  width: 50px;  /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin-right: 7px;
+}
+
+.canv-gr{
+  background-color: #ffffff;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 10px;
 }

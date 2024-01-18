@@ -43,50 +43,56 @@
     <% end %>
   </div>
 
-  <div class="currency-list-container" style="text-align: center">
+  <div data-controller="chart" class="currency-list-container" style="text-align: center">
     <h2>Favorite Currencies</h2>
-    <p class="last-updated">
+    <p class="last-updated" data-chart-target="date">
       Last updated <%= Time.now.strftime("%a, %e %b %Y %H:%M:%S") %>
     </p>
 
     <!-- Placeholder for USA flag image -->
-    <div class="currency-rectangle">
+    <div data-chart-target="usd" class="currency-rectangle">
       <div class="flag-icon flag-icon-us"></div>
       <div class="currency-details">
         <div class="currency-code">USD</div>
         <div class="currency-name">United States Dollar</div>
       </div>
       <div class="currency-value">
-        <div class="top-value">1 USD = 1 USD</div>
-        <div class="bottom-value">1 USD = 1 USD</div>
+        <div class="top-value"></div>
+        <div class="bottom-value"></div>
       </div>
+      <button class="button-chart" data-chart-target="buttonUSD"  data-action="click->chart#openChart"><i class="fa-solid fa-chart-line"></i></button>
     </div>
+      <canvas class="d-none" id="chart" data-chart-target="canvUsd"></canvas>
 
     <!-- EU flag using flag-icon-css -->
-    <div class="currency-rectangle">
-      <div class="flag-icon flag-icon-eu"></div>
+    <div data-chart-target="aud" class="currency-rectangle">
+      <div class="flag-icon flag-icon-au"></div>
       <div class="currency-details">
-        <div class="currency-code">EUR</div>
-        <div class="currency-name">Euro</div>
+        <div class="currency-code">AUD</div>
+        <div class="currency-name">Australian Dollar</div>
       </div>
       <div class="currency-value">
-        <div class="top-value">1 EUR = 1.2 USD</div>
-        <div class="bottom-value">1 USD = 0.8333 EUR</div>
+        <div class="top-value"></div>
+        <div class="bottom-value"></div>
       </div>
+      <button class="button-chart" data-action="click->chart#openChart" data-chart-target="buttonAUD"><i class="fa-solid fa-chart-line"></i></button>
     </div>
+      <canvas class="d-none" data-chart-target="canvAud"></canvas>
 
     <!-- GB flag using flag-icon-css -->
-    <div class="currency-rectangle">
+    <div data-chart-target="gbp" class="currency-rectangle">
       <div class="flag-icon flag-icon-gb"></div>
       <div class="currency-details">
         <div class="currency-code">GBP</div>
         <div class="currency-name">British Pound Sterling</div>
       </div>
       <div class="currency-value">
-        <div class="top-value">1 GBP = 1.5 USD</div>
-        <div class="bottom-value">1 USD = 0.6667 GBP</div>
+        <div class="top-value"></div>
+        <div class="bottom-value"></div>
       </div>
+      <button data-chart-target="buttonGBP"  data-action="click->chart#openChart" class="button-chart"><i class="fa-solid fa-chart-line"></i></button>
     </div>
+    <canvas class="d-none" data-chart-target="canvGbp"></canvas>
 
   </div>
 
