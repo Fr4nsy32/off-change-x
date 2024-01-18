@@ -31,6 +31,8 @@ The basic concept of OffChangeX is to provide an easy way to exchange cash curre
 
 ⚠️ Sweetalert2 to communicate with the user for validations and a dedicated page to check the currencies you can use.
 
+📈 Live currency updates on the home page, for each currency a [chart](https://www.chartjs.org/) can be displayed with the rates of the last six months.
+
 📌 The map can be accessed via the [Mapbox](https://www.mapbox.com/) API using a custom map. Partners are displayed as a pin geolocated from the store address;
 the 'Near Me' feature [geolocates live](https://github.com/alexreisner/geocoder) and displays the nearest partner on the map and as a list.
 
@@ -44,6 +46,8 @@ the 'Near Me' feature [geolocates live](https://github.com/alexreisner/geocoder)
 
 - <s>Only 10 currencies supported.</s> ✅
 
+- <s>Rates on homepage hard coded</s> ✅
+
 - JS mainly supported on Mozilla Firefox
 
 - Stripe integration for main wallet does not update balance live.
@@ -55,7 +59,7 @@ the 'Near Me' feature [geolocates live](https://github.com/alexreisner/geocoder)
 
 - Stripe webhook to get live updates after the top up of the wallet.
 
-- A chart for the recent rates of the currencies.
+- <s>A chart for the recent rates of the currencies.</s> ✅
 
 - Improve the performaces and some minors bugs.
 
@@ -71,7 +75,9 @@ the 'Near Me' feature [geolocates live](https://github.com/alexreisner/geocoder)
 
 <h3> HOMEPAGE : ⬇️ </h3>
 
-![Homepage](/app/assets/images/Screenshot%202024-01-11%20163651.png)
+
+https://github.com/Fr4nsy32/off-change-x/assets/62887350/0f9a807d-b3a7-4dd2-8216-af55afe27929
+
 
 <br>
 <h3> WALLETS : ⬇️ </h3>
