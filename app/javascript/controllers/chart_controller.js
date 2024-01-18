@@ -10,6 +10,7 @@ static targets = ["usd","aud","gbp","date","buttonGBP","buttonAUD","buttonUSD","
   connect() {
     this.rates()
     setInterval(this.rates.bind(this), 60000)
+    console.log(this.dateTarget);
   }
 
   rates(){
@@ -35,6 +36,12 @@ static targets = ["usd","aud","gbp","date","buttonGBP","buttonAUD","buttonUSD","
     .then((data) => {
         this.gbpTarget.childNodes[5].childNodes[3].innerHTML = `1 GBP = ${data.rates.EUR.toFixed(3)} EUR`
     })
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep','Oct','Nov','Dec'];
+    let currentdate = new Date();
+    let datetime = `Last updated ${days[currentdate.getDay()]}, ${currentdate.getDate()} ${months[currentdate.getMonth()]} ${currentdate.getFullYear()}
+    ${currentdate.getHours()}:${currentdate.getMinutes()}:${currentdate.getSeconds()}`
+    this.dateTarget.innerHTML = datetime
   }
 
   openChart(event){
